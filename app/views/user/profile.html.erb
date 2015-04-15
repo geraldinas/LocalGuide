@@ -1,25 +1,37 @@
 
 <center><h1> Profile </h1></center>
 
-  <form action="action_page.php" method="get">
-    <center><fieldset>
+  <form action="/map" method="get">
+    <fieldset>
     <center><legend>Personal information:</legend></center>
-    <img src="<%= current_user.image_url %>"><br>
-    <p><%= current_user.name %><p>
-    <p><%= current_user.location %></p>
-<<<<<<< HEAD
-   <br><br>
-    Contact Info:<br>
-    <%= text_field_tag :value, nil, :placeholder => "harrypotter@gmail.com" %>
-=======
-   
->>>>>>> development
-    <br><br>
-    Suggestions:<br>
-    <%= text_field_tag :value, nil, :placeholder => "London Bridge" %>
-    <br><br>
+    <div style="float: left;"><img src="<%= current_user.image_url %>" height="150" width="150"><br>
+      <p><%= current_user.name %><p>
+      <p><%= current_user.location %></p>
+    </div>
 
+    <div class="row" >
+      <div class="col-md-1 col-md-offset-1">
+       Contact Info:<br>
+       <%= text_field_tag :value, nil, :placeholder => "harrypotter@gmail.com" %>
+       <br><br>
+       Suggestions:<br>
+       <%= text_field_tag :value, nil, :placeholder => "London Bridge" %>
+       <br><br>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="col-md-1 col-md-offset-1">
+      <div style="float: right;">
+        Reviews:<br>
+        <%= text_field_tag :value, nil, :placeholder => "This person was awesome" %>
+        <br><br>
+        Rating:
+        <%= text_field_tag :value, nil, :placeholder => "stars n shit" %>
+      </div>
+    </div>
+    </div>
     <input type="submit" value="Submit"></fieldset></center>
   </form>
   <br><br>
-  <center><%= link_to "Sign Out", signout_path %></center>
+  <center><%= link_to "Sign Out", signout_path %>
