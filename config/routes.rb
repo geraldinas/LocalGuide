@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
   root to: 'static_pages#index'
 
+<<<<<<< HEAD
   get "/profile" => "user#profile"
 
   get "/map" => "country#map"
@@ -14,4 +13,13 @@ Rails.application.routes.draw do
   resources :user, :only => [:show, :index]
   resources :country, :only => [:show, :index]
   
+=======
+  get "/profile" => "users#profile"
+
+  get "/auth/twitter/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", :as => :signout
+
+  resources :users, :only => [:show, :index]
+  resources :activities, :only => [:show, :index,:create]
+>>>>>>> development
 end
