@@ -1,23 +1,22 @@
 <center><h1> Profile </h1></center>
-<<<<<<< HEAD:app/views/user/profile.html.erb
+
 
   <form action="action_page.php" method="get">
-=======
-<%= render 'activities/show' %>
+
   <form action="action_page.php">
->>>>>>> b7d3cdd22410a4d01ef6a82bff20e4a2d3686158:app/views/users/profile.html.erb
+
     <center><fieldset>
     <center><legend>Personal information:</legend></center>
     <img src="<%= current_user.image_url %>"><br>
     <p><%= current_user.name %><p>
     <p><%= current_user.location %></p>
-<<<<<<< HEAD
+
    <br><br>
     Contact Info:<br>
     <%= text_field_tag :value, nil, :placeholder => "harrypotter@gmail.com" %>
-=======
+
    
->>>>>>> development
+
     <br><br>
     Suggestions:<br>
     <%= text_field_tag :value, nil, :placeholder => "London Bridge" %>

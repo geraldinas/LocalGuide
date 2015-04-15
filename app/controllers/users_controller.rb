@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def profile
     #@activity = Activity.new
-    @rating = Rating.new
+    #@rating = Rating.new
   end
 
   def show
