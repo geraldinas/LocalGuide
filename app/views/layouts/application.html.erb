@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<% unless current_user.nil? %>
+  <%= render 'layouts/header' %>
+<% end %>
 <html>
 <head>
   <title>LocalGuide</title>
