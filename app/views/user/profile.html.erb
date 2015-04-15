@@ -1,0 +1,17 @@
+<center><h1> Make Profile </h1></center>
+
+  <form action="action_page.php">
+    <center><fieldset>
+    <center><legend>Personal information:</legend></center>
+    First name:<br>
+    <!-- <input type="text" name="firstname" value="Mickey"> -->
+    <%= text_field_tag :value, nil, :placeholder => "Sherlock" %>
+    <br><br>
+    Last name:<br>
+    <%= text_field_tag :value, nil, :placeholder => "Holmes" %>
+    <br><br>
+    Suggestions:<br>
+    <%= text_field_tag :value, nil, :placeholder => "London Bridge" %>
+    <br><br>
+    <input type="submit" value="Submit"></fieldset></center>
+  </form>
