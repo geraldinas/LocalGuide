@@ -7,7 +7,13 @@
     <img src="<%= current_user.image_url %>"><br>
     <p><%= current_user.name %><p>
     <p><%= current_user.location %></p>
+<<<<<<< HEAD
+   <br><br>
+    Contact Info:<br>
+    <%= text_field_tag :value, nil, :placeholder => "harrypotter@gmail.com" %>
+=======
    
+>>>>>>> development
     <br><br>
     Suggestions:<br>
     <%= text_field_tag :value, nil, :placeholder => "London Bridge" %>
@@ -15,3 +21,5 @@
 
     <input type="submit" value="Submit"></fieldset></center>
   </form>
+  <br><br>
+  <center><%= link_to "Sign Out", signout_path %></center>
