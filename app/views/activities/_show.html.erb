@@ -1,0 +1,13 @@
+<h4>Activities</h4>
+
+<ul class="list-group">
+  <li class="list-group-item list-inline">
+    <h5>Add an activity: </h5>
+    <%#binding.pry%>
+    <%= form_for @activity do |f|%>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.label :name, "Title" %><br>
+      <%= f.text_field :name, :class => "form-control" %><br>
+    <% end %>
+  </li>
+</ul> 
