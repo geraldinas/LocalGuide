@@ -1,5 +1,9 @@
 class ActivitiesController < ApplicationController
-  
+
+  def index
+    @activity = Activity.new
+  end  
+
   def new
     @activity = Activity.new
   end

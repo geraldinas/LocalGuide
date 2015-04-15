@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @activity = Activity.new
+    #@activity = Activity.new
+    @rating = Rating.new
   end
 
   def show

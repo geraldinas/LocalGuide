@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ratings, :only => [:show, :index, :create, :update]
+
   root to: 'static_pages#index'
 
   get "/profile" => "users#profile"
