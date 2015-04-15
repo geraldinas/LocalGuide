@@ -9,4 +9,7 @@ class UsersController < ApplicationController
   def show
   end
 
+  def trip
+  end
+  
 end
