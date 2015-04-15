@@ -1,6 +1,5 @@
 <center><h1> Profile </h1></center>
 
-
   <form action="action_page.php" method="get">
 
   <form action="action_page.php">
@@ -23,6 +22,39 @@
     <br><br>
 
     <input type="submit" value="Submit"></fieldset></center>
+
+  <form action="/map" method="get">
+   <center><fieldset>
+    <center><legend>Personal information:</legend></center>
+    <img src="<%= current_user.image_url %>" height="150" width="150"><br>
+      <p><%= current_user.name %><p>
+      <p><%= current_user.location %></p>
+    
+       Contact Info:
+       <%= text_field_tag :value, nil, :placeholder => "harrypotter@gmail.com" %>
+       <br><br>
+       Suggestions:
+       <%= text_field_tag :value, nil, :placeholder => "London Bridge" %>
+       <br><br>
+      
+        Reviews:
+        <%= text_field_tag :value, nil, :placeholder => "This person was cool" %>
+        <br><br>
+        Rating:
+        <%= text_field_tag :value, nil, :placeholder => "stars n shit" %>
+      
+    <p><input type="submit" value="Submit"></p></fieldset></center>
+
   </form>
   <br><br>
-  <center><%= link_to "Sign Out", signout_path %></center>
+  <center><%= link_to "Sign Out", signout_path %>
+
+  <%= link_to "Upcoming Trips", "/trip", :class => "btn btn-info btn-sm"%>
+
+
+
+
+
+
+
+
