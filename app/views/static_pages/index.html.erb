@@ -1,4 +1,21 @@
-<h1>This is the index</h1>
+<nav class="navbar navbar-inverse navbar-fixed-top" style ='background-color: #99CCCC;'>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="/" style = "font-family:Courier New;color:#333366">Local Guide</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav"></ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<center><h1>This is the index</h1></center>
 <div class="container" "row" "col-md-3">
       <% if current_user == nil %>
         <%= link_to "Sign in with Twitter", "/auth/twitter", :class => "btn btn-info btn-sm"%>
