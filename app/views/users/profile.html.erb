@@ -1,28 +1,5 @@
 <center><h1> Profile </h1></center>
 
-  <form action="action_page.php" method="get">
-
-  <form action="action_page.php">
-
-    <center><fieldset>
-    <center><legend>Personal information:</legend></center>
-    <img src="<%= current_user.image_url %>"><br>
-    <p><%= current_user.name %><p>
-    <p><%= current_user.location %></p>
-
-   <br><br>
-    Contact Info:<br>
-    <%= text_field_tag :value, nil, :placeholder => "harrypotter@gmail.com" %>
-
-   
-
-    <br><br>
-    Suggestions:<br>
-    <%= text_field_tag :value, nil, :placeholder => "London Bridge" %>
-    <br><br>
-
-    <input type="submit" value="Submit"></fieldset></center>
-
   <form action="/map" method="get">
    <center><fieldset>
     <center><legend>Personal information:</legend></center>
