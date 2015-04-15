@@ -15,14 +15,16 @@
   </div>
 </nav>
 
-
-<center><h1>This is the index</h1></center>
-<div class="container" "row" "col-md-3">
-      <% if current_user == nil %>
-        <%= link_to "Sign in with Twitter", "/auth/twitter", :class => "btn btn-info btn-sm"%>
-      <% end %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
     </div>
-  </div>
-</div>
 
-
+  <center><p>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right"> 
+    <% if current_user %>
+      <%= link_to "Profile", "/profile", :class => "btn btn-info btn-sm" %>
+       <%= link_to "Sign Out", signout_path, :class => "btn btn-info btn-sm"%>  
+    <%end%>
+      </p></center>
