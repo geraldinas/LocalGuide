@@ -7,13 +7,6 @@
  
       <% if current_user %>
       <center><p><%= link_to "Profile", "/profile", :class => "btn btn-info btn-sm" %></p></center>
-        <img src="<%= current_user.image_url %>">
-        <p>Welcome <%= current_user.name %>!<p>
-        <p><%= current_user.description %></p>
-        <p><%= current_user.location %></p>
-        <p><%= current_user.nickname %></p>
-        <%= link_to "Sign Out", signout_path %>
-
       <% else %>
         <%= link_to "Sign in with Twitter", "/auth/twitter" %>
       <% end %>

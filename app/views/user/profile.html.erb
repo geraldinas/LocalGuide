@@ -3,15 +3,15 @@
   <form action="action_page.php">
     <center><fieldset>
     <center><legend>Personal information:</legend></center>
-    First name:<br>
-    <!-- <input type="text" name="firstname" value="Mickey"> -->
-    <%= text_field_tag :value, nil, :placeholder => "Sherlock" %>
-    <br><br>
-    Last name:<br>
-    <%= text_field_tag :value, nil, :placeholder => "Holmes" %>
+    <img src="<%= current_user.image_url %>"><br>
+    <p><%= current_user.name %><p>
+    <p><%= current_user.location %></p>
+    <%= link_to "Sign Out", signout_path %>
+
     <br><br>
     Suggestions:<br>
     <%= text_field_tag :value, nil, :placeholder => "London Bridge" %>
     <br><br>
+
     <input type="submit" value="Submit"></fieldset></center>
   </form>
