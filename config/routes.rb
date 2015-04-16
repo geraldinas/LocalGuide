@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get "/profile" => "users#profile"
 
+
+  get "/auth/facebook/callback" => "sessions#create"
   get "/trip" => "users#trip"
 
   get "/all_trips" => "users#all_trips"
@@ -19,7 +21,6 @@ Rails.application.routes.draw do
 
   # get "/profile" => "users#profile"
 
-  get "/auth/twitter/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 
   resources :users, :only => [:show, :index]
