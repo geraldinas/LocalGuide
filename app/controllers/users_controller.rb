@@ -12,5 +12,8 @@ class UsersController < ApplicationController
 
   def trip
   end
+
+  def all_trips
+  end
   
 end
