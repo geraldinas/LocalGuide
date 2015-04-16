@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
-  has_many :activities
-  has_many :ratings
-  has_many :cities
-  has_many :availabilities
+  belongs_to :city
+  has_many :activities, foreign_key: "guide_id"
+  has_many :led_tours, through: :activities
+  has_many :trips, foreign_key: "tourist_id"
+  has_many :tours, through: :trips
+  delegate :country, to: :city
 
+  
 
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -17,6 +20,10 @@ class User < ActiveRecord::Base
       # user.token = auth["credentials"]["token"]
       # user.secret = auth["credentials"]["secret"]
     end
+  end
+
+  def self.info(input)
+
   end
     
 end
