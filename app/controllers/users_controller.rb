@@ -1,19 +1,31 @@
 class UsersController < ApplicationController
+  
   def index
   end
 
   def profile
-    #@activity = Activity.new
-    #@rating = Rating.new
   end
 
   def show
   end
-
-  def trip
-  end
-
-  def all_trips
+  
+  def edit
+    @user = User.find(params[:id])
+  end  
+  
+  def update
+    @user = User.find(params[:id])
+    if User.added_email_and_city?(user_params)
+      @user.update(user_params)
+      redirect_to '/profile'
+    else
+      flash[:notice]= "Sorry, please select a valid city and enter your email"
+      render :edit
+    end
   end
   
+  private
+  def user_params
+    params.require(:user).permit(:city_id, :email)
+  end
 end

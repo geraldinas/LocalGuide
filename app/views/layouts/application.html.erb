@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<% unless current_user.nil? %>
-  <%= render 'layouts/header' %>
-<% end %>
 <html>
 <head>
   <title>LocalGuide</title>
@@ -11,6 +8,13 @@
   <%= analytics_init if Rails.env.production? %>
 </head>
 <body>
+<% unless current_user.nil? %>
+  <%= render 'layouts/header' %>
+<% end %>
+
+<% unless current_user.nil? || current_user.city.nil? || current_user.email.nil?%>
+  <%= render 'layouts/sub_header' %>
+<% end %>
 
 <%= yield %>
 

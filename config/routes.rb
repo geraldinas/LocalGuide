@@ -1,29 +1,23 @@
 Rails.application.routes.draw do
-  resources :ratings, :only => [:show, :index, :create, :update]
 
   root to: 'static_pages#index'
 
-
   get "/profile" => "users#profile"
 
-
   get "/auth/facebook/callback" => "sessions#create"
-  get "/trip" => "users#trip"
+  get "/signout" => "sessions#destroy", :as => :signout  
+  
+  resources :activities, :only => [:create, :new]
 
-  get "/all_trips" => "users#all_trips"
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-  # get "/auth/twitter/callback" => "sessions#create"
-  # get "/signout" => "sessions#destroy", :as => :signout
+  resources :ratings, :only => [:show, :index, :create, :update]
 
-  # resources :user, :only => [:show, :index]
-  # resources :country, :only => [:show, :index]
+  resources :users, :only => [:edit, :update, :show]
+  
+  resources :trips, :only => [:new, :show, :create] 
 
-  # get "/profile" => "users#profile"
+  resources :trips do 
+    resources :users, :only => [:index]
+  end
 
-  get "/signout" => "sessions#destroy", :as => :signout
-
-  resources :users, :only => [:show, :index]
-  resources :activities, :only => [:show, :index,:create]
-
+  resources :tours, :only => [:create]
 end

@@ -6,26 +6,22 @@ class User < ActiveRecord::Base
   has_many :tours, through: :trips
   has_many :activities, through: :tours
   has_many :guides, through: :activities
-  delegate :country, to: :city
+  delegate :country, to: :city 
 
-  
+  def self.added_email_and_city?(params)
+    return false if params[:email].length < 4
+    return false if params[:city_id].length < 1
+    true
+  end
 
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      user.nickname = auth["info"]["nickname"]
-      user.location = auth["info"]["location"]
+      user.nickname = auth["info"]["nickname"] 
       user.image_url = auth["info"]["image"]
       user.description = auth["info"]["description"]
-      # user.token = auth["credentials"]["token"]
-      # user.secret = auth["credentials"]["secret"]
     end
-  end
-
-  def self.info(input)
-
-  end
-    
+  end  
 end
