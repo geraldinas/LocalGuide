@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150416150536) do
     t.string   "nickname"
     t.string   "image_url"
     t.string   "description"
+    t.integer  "city_id"
   end
 
 end

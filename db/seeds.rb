@@ -6,17 +6,27 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-countries = ("Afghanistan,AF"
-"land Islands,AX"
-"Albania,AL"
-"Algeria,DZ"
-"American Samoa,AS"
-"Andorra,AD"
-"Angola,AO"
-"Anguilla,AI"
-"Antarctica,AQ"
-"Antigua and Barbuda,AG"
-"Argentina,AR"
-"Armenia,AM"
-"Aruba,AW"
-"Australia,AU")
+us = Country.create(name: "USA")
+nyc = City.create(name: "NYC", country_id: us.id)
+bob = User.create(name: "Robert", nickname: "Bob", image_url: "http://vignette4.wikia.nocookie.net/bobsburgerpedia/images/e/ed/310_08A_06_tk1-0168.jpg/revision/latest?cb=20130423130543", description: "I love burgers and I'm free on Fridays.", city_id: nyc.id)
+louise = User.create(name: "Lola", nickname: "Louise", image_url: "http://vignette4.wikia.nocookie.net/bobsburgerpedia/images/e/ed/310_08A_06_tk1-0168.jpg/revision/latest?cb=20130423130543", description: "I love bunny ear hats and I'm free on thursdays.", city_id: nyc.id)
+
+karaoke = Activity.create(name: "Karaoke bar", description: "get drunk", guide_id: louise.id)
+
+italy = Country.create(name: "Italy")
+rome = City.create(name: "Rome", country_id: italy.id)
+simone = User.create(name: "Simone", nickname: "Simon", image_url: "http://vignette4.wikia.nocookie.net/bobsburgerpedia/images/e/ed/310_08A_06_tk1-0168.jpg/revision/latest?cb=20130423130543", description: "My name is Simone and im free on Tuesdays.", city_id: rome.id)
+
+linda = User.create(name: "Linda", nickname: "Lin", image_url: "http://vignette4.wikia.nocookie.net/bobsburgerpedia/images/e/ed/310_08A_06_tk1-0168.jpg/revision/latest?cb=20130423130543", description: "My name is Linda and im free on Wednesday.", city_id: rome.id)
+
+colosseum = Activity.create(name: "Visit colosseum", description:"Have fun", guide_id: simone.id)
+
+italy_trip = Trip.create(tourist_id: bob.id, city_id: rome.id, start_date: Date.today, end_date: Date.today + 5)
+ 
+colosseum_tour = Tour.create(trip_id: italy_trip.id, activity_id: colosseum.id, start_time: Date.today + 1, end_time: Date.today + 3)
+
+nyc_trip = Trip.create(tourist_id: linda.id, city_id: nyc.id, start_date: Date.today, end_date: Date.today + 5)
+
+karaoke_tour = Tour.create(trip_id: nyc_trip.id, activity_id: karaoke.id, start_time: Date.today + 1, end_time: Date.today + 3)
+
+
