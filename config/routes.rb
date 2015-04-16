@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get "/profile" => "users#profile"
 
-  get "/auth/twitter/callback" => "sessions#create"
+  get "/auth/facebook/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 
   resources :users, :only => [:show, :index]
