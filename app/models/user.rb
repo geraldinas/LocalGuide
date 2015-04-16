@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :led_tours, through: :activities
   has_many :trips, foreign_key: "tourist_id"
   has_many :tours, through: :trips
+  has_many :activities, through: :tours
+  has_many :guides, through: :activities
   delegate :country, to: :city
 
   
