@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "/profile" => "users#profile"
 
   get "/trip" => "users#trip"
+
+  get "/all_trips" => "users#all_trips"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   # get "/auth/twitter/callback" => "sessions#create"
