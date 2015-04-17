@@ -1,6 +1,5 @@
 <h1>Headed to: <%=@trip.city.name%></h1>
 <p>Start date of trip: <%=@trip.start_date.to_formatted_s(:long_ordinal)%></p>
-
 <p>End date of trip: <%=@trip.end_date.to_formatted_s(:long_ordinal)%></p>
 
 <h3>Booked tours for your upcoming trip:</h3>
@@ -8,8 +7,8 @@
 <p><%@trip.tours.each do |tour| %>
 	<p><%=tour.activity.name%>
 	<ul>
-		<li>Start date of booked tour: <%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
-		<li>End date of booked tour: <%=tour.end_time.to_formatted_s(:long_ordinal)%></li>
+		<li>Start time of booked tour: <%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
+		<li>End time of booked tour: <%=tour.end_time.to_formatted_s(:long_ordinal)%></li>
 	</ul>
 <%end%>
 
