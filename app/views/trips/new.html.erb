@@ -1,4 +1,5 @@
 <%=form_for @trip do |f| %>
+	<%= f.hidden_field :tourist_id, :value => current_user.id%>
   <%= f.label :city_id, "Select your city" %>
   <%= f.collection_select :city_id, City.all, :id, :name %><br>
 	<%= f.label :start_date, "Select a start date" %>

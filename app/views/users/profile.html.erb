@@ -18,3 +18,10 @@ All activities:
 <% current_user.activities.each do |activity| %>
 	<%= activity.name %>
 <% end %>
+
+<br>All Trips:</br>
+<% current_user.trips.each do |trip|%>
+<%=trip.city.name%>
+<%end%>
+
+
