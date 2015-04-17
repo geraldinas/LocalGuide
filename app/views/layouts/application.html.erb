@@ -10,9 +10,9 @@
 <body>
 <% if current_user.present? %>
   <%= render 'layouts/header' %>
-<% end %>
-  <% unless current_user.city.nil? || current_user.email.nil?%>
-  <%= render 'layouts/sub_header' %>
+	<% unless current_user.city.nil? || current_user.email.nil?%>
+	  <%= render 'layouts/sub_header' %>
+	<% end %>
 <% end %>
 
 <%= yield %>
