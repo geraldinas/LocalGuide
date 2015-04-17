@@ -10,9 +10,9 @@ Showing guides in:
 			<%= f.hidden_field :activity_id, value: activity.id%>
 			<%= f.hidden_field :trip_id, value: @trip.id%>
 			<%= f.label :start_time%>
-			<%= f.date_field :start_time%>
+			<%= f.time_field :start_time%>
 			<%= f.label :end_time %>
-			<%= f.date_field :end_time%>
+			<%= f.time_field :end_time%>
 			<%= f.submit "Book Tour"%>
 		<%end%>
 	<%end%>	
