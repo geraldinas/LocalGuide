@@ -1,7 +1,3 @@
-<%if flash[:notice]%>
-  <%=flash[:notice]%>  
-<%end%>
-
 <%=form_for @user do |f| %>
   <%= f.label :city_id, "Select your city" %>
   <%= f.collection_select :city_id, City.all, :id, :name %>
@@ -9,3 +5,5 @@
   <%= f.text_field :email %>
   <%= f.submit %>
 <% end %>
+
+ 

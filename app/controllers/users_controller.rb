@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   
   def index
+    @trip = Trip.find(params[:trip_id])
+    @users = User.where(:city_id => @trip.city_id)
+    
   end
 
   def profile

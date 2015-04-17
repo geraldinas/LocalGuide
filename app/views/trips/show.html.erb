@@ -1,0 +1,18 @@
+Here is your trip show page
+
+<p><%=@trip.city.name%></p>
+<p><%=@trip.start_date.to_formatted_s(:long_ordinal)%></p>
+<p><%=@trip.end_date.to_formatted_s(:long_ordinal)%></p>
+Trip Tours:
+
+<p><%=@trip.tours.each do |tour| %>
+	<p><%=tour.activity.name%>
+	<p><%=tour.start_date.to_formatted_s(:long_ordinal)%>
+	<p><%=tour.end_date.to_formatted_s(:long_ordinal)%>
+<%end%>
+
+<%= link_to "Find a Guide", trip_users_path(@trip) %>
+
+*Button for all guides
+*Button to edit
+*Button to make a new trip
