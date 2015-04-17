@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   has_many :led_tours, through: :activities
   has_many :trips, foreign_key: "tourist_id"
   has_many :tours, through: :trips
-  has_many :activities, through: :tours
-  has_many :guides, through: :activities
+  has_many :tourist_activities, through: :tours, :source => :activity
+  has_many :guides, through: :tourist_activities
   delegate :country, to: :city 
 
   def self.added_email_and_city?(params)
