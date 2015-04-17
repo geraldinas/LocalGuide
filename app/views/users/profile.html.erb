@@ -16,7 +16,9 @@ Contact Info:
 
 <br>All activities:</br>
 <% current_user.activities.each do |activity| %>
-	<p><%= activity.name %></p>
+	<p>
+		<%= link_to(activity.name, activity_path(activity)) %>
+	</p>
 <% end %>
 
 <br>All Trips:</br>
