@@ -1,27 +1,25 @@
-<center><h1> Profile </h1></center>
+<center><h1> My Profile </h1></center>
 
 <center><legend>Personal information:</legend></center>
 
-<img src="<%= current_user.image_url %>">
+<center><img src="<%= current_user.image_url %>" height="72" width="72">
+<p><h3><%= current_user.name %></h3></p>
+<p><b>Location: </b><%= current_user.city.name %></p>
+<b>Email: </b><%= current_user.email %><br></p></center>
 
 
-<p><%= current_user.name %><p>
-Location: <p><%= current_user.city.name %><p>
-Contact Info:
-<p>Email: <%= current_user.email %><br></p>
-<%= link_to "Edit", edit_user_path(current_user), :class => "btn btn-info btn-sm"%>
-
+<center><%= link_to "Edit", edit_user_path(current_user), :class => "btn btn-info btn-sm"%>
 <%= link_to "Make New Trip", new_trip_path, :class => "btn btn-info btn-sm"%>
-<%= link_to "Make New Activity", new_activity_path, :class => "btn btn-info btn-sm"%>
+<%= link_to "Make New Activity", new_activity_path, :class => "btn btn-info btn-sm"%></center>
 
-<br>All activities:</br>
+<center><br><b>All activities:</br></b>
 <% current_user.activities.each do |activity| %>
 	<p><%= activity.name %></p>
-<% end %>
+<% end %></center>
 
-<br>All Trips:</br>
+<center><br><b>All Trips:</br></b>
 <% current_user.trips.each do |trip|%>
 <p><%=trip.city.name%></p>
-<%end%>
+<%end%></center>
 
 
