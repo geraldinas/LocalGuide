@@ -1,6 +1,6 @@
-<% if flash[:notice] %>
+<center><% if flash[:notice] %>
   <%= flash[:notice] %>  
-<% end %>
+<% end %></center>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" style ='background-color: #99CCCC;'>
   <div class="container">
@@ -20,10 +20,10 @@
 </nav>
 
 
-<center><h1>This is the index</h1></center>
+<center><h1>Welcome to Local Guide!</h1></center>
 <div class="container" "row" "col-md-3">
-      <% if current_user == nil %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "btn btn-info btn-sm"%>
+      <% if current_user == nil %><br><br>
+        <center><%= link_to "Sign in with Facebook", "/auth/facebook", :class => "btn btn-info btn-sm"%></center>
       <% end %>
     </div>
   </div>
