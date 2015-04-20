@@ -38,7 +38,8 @@
     <%end%>
 
   <div class="container" "row">
-      
+      <%= link_to "My Notifications", notifications_path %>
+
       <h2>Requested Tours</h2>
 
       <b>Accepted Tours:</b><br>
@@ -63,6 +64,7 @@
           <li><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
           <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
           <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
+
 
       <%= form_for tour do |f| %>
         <%= f.hidden_field :status, :value => "accepted" %>

@@ -20,3 +20,5 @@ colosseum_tour = Tour.create(trip_id: italy_trip.id, activity_id: colosseum.id, 
 nyc_trip = Trip.create(tourist_id: linda.id, city_id: nyc.id, start_date: Date.today, end_date: Date.today + 5)
 
 karaoke_tour = Tour.create(trip_id: nyc_trip.id, activity_id: karaoke.id, start_time: Date.today + 1, end_time: Date.today + 3)
+
+new_tour_booked = Notification.create(description: "Hi, I would like to book your tour", user: simone)

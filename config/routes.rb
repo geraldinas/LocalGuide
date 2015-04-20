@@ -15,8 +15,10 @@ Rails.application.routes.draw do
   
   resources :trips, :only => [:new, :show, :create, :index] 
 
+  resources :notifications, :only => [:index]
+
   resources :trips do 
-    resources :users, :only => [:index]
+    resources :users, only: [:index]
   end
 
   resources :tours, :only => [:create, :update]
