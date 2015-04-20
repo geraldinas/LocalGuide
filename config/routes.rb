@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#index'
 
+  get "/show" => "users#show"
+
   get "/profile" => "users#profile"
 
   get "/auth/facebook/callback" => "sessions#create"
