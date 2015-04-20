@@ -1,9 +1,9 @@
-<%=form_for @user do |f| %>
+<%=form_for @user do |f| %><br>
   <%= f.label :city_id, "Select your city" %>
-  <%= f.collection_select :city_id, City.all, :id, :name %>
+  <%= f.collection_select :city_id, City.all, :id, :name %><br><br>
   <%= f.label :email, "Enter Email" %>
   <%= f.text_field :email %>
-  <%= f.submit %>
+  <%= f.submit "Update Profile" %>
 <% end %>
 
  
