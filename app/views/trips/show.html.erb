@@ -5,11 +5,11 @@
 <center><h3>Booked tours for your upcoming trip:</h3></center>
 
 <p><%@trip.tours.each do |tour| %>
-	<p><%=tour.activity.name%>
+	<center><b><p><%=tour.activity.name%></p></b></center>
 
 	<ul>
-		<li>Start time of booked tour: <%=tour.start_time%></li>
-		<li>End time of booked tour: <%=tour.end_time%></li>
+		<center><li>Start time of booked tour: <%=tour.start_time%></li>
+		<li>End time of booked tour: <%=tour.end_time%></li></center>
 	</ul>
 <%end%>
 
