@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :tourist_activities, through: :tours, :source => :activity
   has_many :guides, through: :tourist_activities
   delegate :country, to: :city 
-  validates :email, :presence => true
 
   def self.added_email_and_city?(params)
     return false if params[:email].length < 4
