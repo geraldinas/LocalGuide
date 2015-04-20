@@ -1,30 +1,12 @@
-<div class="container">
-  <center><div class="row">
+<center>
+  <div class="row" "container">
     <% if @trip.errors.any? %>
-    <div id="error_explanation">
+      <div id="error_explanation">
       <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this post from being saved:</h2>
-      <ul>
       <% @trip.errors.full_messages.each do |message| %>
-        <ul><%= message %></ul>
+        <%= message %>
       <% end %>
-      </ul>
-    </div>
     <% end %>
-  </div><center>
-  
-  <center><div class="row">
-    <%=form_for @trip do |f| %>
-    	<%= f.hidden_field :tourist_id, :value => current_user.id%><br>
-      <center><%= f.label :city_id, "Select your city" %></center>
-      <center><%= f.collection_select :city_id, City.all, :id, :name %></center><br>
-    	<center><%= f.label :start_date, "Select a start date" %></center>
-    	<center><%= f.date_field :start_date %> </center></div><br>
-    	<center><%= f.label :end_date, "Select an end date" %></center>
-    	<center><%= f.date_field :end_date %><br></center><br><br>
-      <center><%= f.submit %></center>
-    <% end %>
-  </div></center>
-
+    <%= render partial:'form'%>
+</center>
 </div>
-
-
