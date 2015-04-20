@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/auth/facebook/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout  
   
-  resources :activities, :only => [:create, :new, :show]
+  resources :activities, :only => [:create, :new, :show, :update, :edit]
 
   resources :ratings, :only => [:show, :index, :create, :update]
 

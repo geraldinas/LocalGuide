@@ -1,32 +1,17 @@
-<center><% if flash[:notice] %>
-  <%= flash[:notice] %>  
-<% end %></center>
+<center>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>  
+  <% end %>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style ='background-color: #99CCCC;'>
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <a class="navbar-brand" href="/" style = "font-family:Courier New;color:#333366"><b>Local Guide</b></a>
-    </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav"></ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</nav>
+  <nav class="navbar navbar-inverse navbar-fixed-top" style ='background-color: #99CCCC;'>
+      <a class="navbar-brand" href="/" style = "font-family:Courier New;color:#333366">
+        <b>Local Guide</b>
+      </a>
+  </nav>
 
-
-<center><h1>Welcome to Local Guide!</h1></center>
-<div class="container" "row" "col-md-3">
-      <% if current_user == nil %><br><br>
-        <center><%= link_to "Sign in with Facebook", "/auth/facebook", :class => "btn btn-info btn-sm"%></center>
+  <h1>Welcome to Local Guide!</h1><br>
+      <% if current_user == nil %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "btn btn-info btn-sm"%>
       <% end %>
-    </div>
   </div>
-</div>
-
-
+</center>
