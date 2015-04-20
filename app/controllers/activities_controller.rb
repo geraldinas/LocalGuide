@@ -6,9 +6,11 @@ class ActivitiesController < ApplicationController
 
 	def create
 		@activity = Activity.new(activity_params)
-		@activity.save
-
-		redirect_to "/activities/#{@activity.id}"
+		if @activity.save
+			redirect_to "/activities/#{@activity.id}"
+		else
+			render :new
+		end
 	end
 
 	def show

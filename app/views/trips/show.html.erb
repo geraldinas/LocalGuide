@@ -8,13 +8,14 @@
 	<center><b><p><%=tour.activity.name%></p></b></center>
 
 	<ul>
-		<center><li>Start time of booked tour: <%=tour.start_time%></li>
-		<li>End time of booked tour: <%=tour.end_time%></li></center>
+		<center><p>Start time of booked tour: <%=tour.start_time%></p>
+		<p>End time of booked tour: <%=tour.end_time%></center></p>
 	</ul>
 <%end%>
 
 <center><p><%= link_to "Find a Tour Guide", trip_users_path(@trip) %></p></center>
 
-*Button for all guides
-*Button to edit
-*Button to make a new trip
+
+<p>*Button for all guides</p>
+<p>*Button to edit</p>
+<p>*Button to make a new trip</p>
