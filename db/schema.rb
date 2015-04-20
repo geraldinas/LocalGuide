@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420144107) do
+ActiveRecord::Schema.define(version: 20150420192004) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "guide_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.text     "availability", default: "please contact guide"
   end
 
   create_table "cities", force: :cascade do |t|
