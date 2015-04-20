@@ -1,11 +1,12 @@
-<center><h1> My Profile </h1></center>
+<center>
+<h1> My Profile </h1>
 
-<center><legend>Personal information:</legend></center>
+<legend>Personal information:</legend>
 
-<center><img src="<%= current_user.image_url %>" height="72" weight="72">
+<img src="<%= current_user.image_url %>" height="72" weight="72">
 <p><h4><%= current_user.name %></h4></p>
 <b>Location: </b><p><%= current_user.city.name %></p>
-<b>Email: </b><%= current_user.email %><br></p></center>
+<b>Email: </b><%= current_user.email %><br></p>
 
 
 <center><%= link_to "Edit", edit_user_path(current_user), :class => "btn btn-info btn-sm"%>

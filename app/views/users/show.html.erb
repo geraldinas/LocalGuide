@@ -1,16 +1,17 @@
-<center><h1> <%=@user.name%>'s Profile</h1></center>
+<center>
 
-<center><legend>Personal Info:</legend></center>
+  <h1> <%=@user.name%>'s Profile</h1>
+  <legend>Personal Info:</legend>
 
-<center><img src="<%= current_user.image_url %>" height="72" weight="72">
-<p><h4><%= @user.name %></h4></p>
-<b>Location: </b><p><%= @user.city.name %></p>
-<b>Email: </b><%= @user.email %><br></p></center>
+  <img src="<%= current_user.image_url %>" height="72" weight="72">
+  <p><h4><%= @user.name %></h4></p>
+  <b>Location: </b><p><%= @user.city.name %></p>
+  <b>Email: </b><%= @user.email %><br></p>
 
-
-<center><br><b>All activities <%=@user.name%> is Hosting:</b></br>
-<% @user.activities.each do |activity| %>
-  <p>
-    <%= link_to(activity.name, activity_path(activity)) %>
-  </p>
-<% end %></center>
+  <br><b>All activities <%=@user.name%> is Hosting:</b></br>
+  <% @user.activities.each do |activity| %>
+    <p>
+      <%= link_to(activity.name, activity_path(activity)) %>
+    </p>
+  <% end %>
+</center>

@@ -15,6 +15,14 @@ class ActivitiesController < ApplicationController
 		@activity = Activity.find(params[:id])
 	end
 
+	def edit
+    @activity = Activity.find(params[:id])
+  end  
+
+  def update
+  	@user = User.find(params[:id])
+  	redirect_to '/profile'
+  end
 	
 	private
 	
