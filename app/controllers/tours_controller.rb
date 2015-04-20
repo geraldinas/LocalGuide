@@ -3,14 +3,13 @@ class ToursController < ApplicationController
 	def create
 		@tour = Tour.new(tour_params)
 		@tour.save
-
-		redirect_to "/trips/#{@tour.trip.id}"
+    UserMailer.tour_request_email(@tour.guide).deliver_now
+    redirect_to "/trips/#{@tour.trip.id}"
 	end
 
   def update 
     @tour = Tour.find(params[:id])
     @tour.update(tour_params)
-
     redirect_to :back 
   end
 

@@ -15,7 +15,7 @@ karaoke = Activity.create(name: "Karaoke bar", description: "get drunk", guide_i
 
 italy = Country.create(name: "Italy")
 rome = City.create(name: "Rome", country_id: italy.id)
-simone = User.create(name: "Simone", nickname: "Simon", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "My name is Simone and im free on Tuesdays.", city_id: rome.id)
+simone = User.create(name: "Simone", nickname: "Simon", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "My name is Simone and im free on Tuesdays.", email:"geraldinagalvarez@gmail.com", city_id: rome.id)
 
 linda = User.create(name: "Linda", nickname: "Lin", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "My name is Linda and im free on Wednesday.", city_id: rome.id)
 
