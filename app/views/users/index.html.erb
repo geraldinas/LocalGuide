@@ -1,8 +1,9 @@
 Showing guides in:
 <%=@trip.city.name%>
 <%@users.each do |user|%>
-	<p><%=user.name%></p>
-	<img src="<%=user.image_url%>">
+	<h3><%= link_to(user.name, user_path(user)) %></h3>
+	<%= link_to(image_tag(user.image_url),user_path(user)) %>
+
 	<%=user.description%>
 	<%user.activities.each do |activity|%>
 		<p><%=activity.name%></p>
