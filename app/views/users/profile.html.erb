@@ -12,7 +12,7 @@
 <%= link_to "Make New Trip", new_trip_path, :class => "btn btn-info btn-sm"%>
 <%= link_to "Make New Activity", new_activity_path, :class => "btn btn-info btn-sm"%></center>
 
-<center><br><b>All activities:</b></br>
+<center><br><b>Activities you are Hosting:</b></br>
 <% current_user.activities.each do |activity| %>
   <p>
     <%= link_to(activity.name, activity_path(activity)) %>
@@ -29,22 +29,22 @@
 
 Accepted Tours:<br>
   <% current_user.accepted_led_tours.each do |tour| %><br>
-    <li><%=tour.activity.name%></li>
-    <li><%=tour.trip.tourist.name %></li>
-    <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
+    <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
+    <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
+    <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
     <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
   <%end%>
 Rejected Tours:<br>
   <% current_user.rejected_led_tours.each do |tour| %><br>
-    <li><%=tour.activity.name%></li>
-    <li><%=tour.trip.tourist.name %></li>
+    <li><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
+    <li><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
     <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
     <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
   <%end%>
 Pending Tours:<br>
   <% current_user.pending_led_tours.each do |tour| %><br>
-    <li><%=tour.activity.name%></li>
-    <li><%=tour.trip.tourist.name %></li>
+    <li><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
+    <li><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
     <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
     <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
 
