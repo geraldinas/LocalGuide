@@ -1,19 +1,17 @@
 <center>
-<% if flash[:notice] %>
-  <%= flash[:notice] %>  
-<% end %>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>  
+  <% end %>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style ='background-color: #99CCCC;'>
-    <a class="navbar-brand" href="/" style = "font-family:Courier New;color:#333366"><b>Local Guide</b></a>
-</nav>
+  <nav class="navbar navbar-inverse navbar-fixed-top" style ='background-color: #99CCCC;'>
+      <a class="navbar-brand" href="/" style = "font-family:Courier New;color:#333366">
+        <b>Local Guide</b>
+      </a>
+  </nav>
 
-<h1>Welcome to Local Guide!</h1>
-<div class="container" "row" "col-md-3">
-    <% if current_user == nil %><br>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "btn btn-info btn-sm"%></
-    <% end %>
-</div>
+  <h1>Welcome to Local Guide!</h1><br>
+      <% if current_user == nil %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "btn btn-info btn-sm"%>
+      <% end %>
+  </div>
 </center>
-
-
-
