@@ -19,5 +19,5 @@ Rails.application.routes.draw do
     resources :users, :only => [:index]
   end
 
-  resources :tours, :only => [:create]
+  resources :tours, :only => [:create, :update]
 end

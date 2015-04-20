@@ -24,4 +24,26 @@ class User < ActiveRecord::Base
       user.description = auth["info"]["description"]
     end
   end  
+
+  def accepted_led_tours
+    find_led_tours_by_status("accepted")
+  end
+
+  def rejected_led_tours
+    find_led_tours_by_status("rejected")
+  end
+
+  def pending_led_tours
+    find_led_tours_by_status("pending")
+  end
+
+  def find_led_tours_by_status(status)
+    container = []
+    self.led_tours.each do |tour|
+      if tour.status == status
+        container << tour 
+      end
+    end
+     container
+  end
 end

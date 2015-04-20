@@ -24,3 +24,39 @@
   <p>
     <%= link_to(trip.city.name, trip_path(trip)) %></p>
 <%end%></center>
+
+<h2>Requested Tours</h2>
+
+Accepted Tours:<br>
+  <% current_user.accepted_led_tours.each do |tour| %><br>
+    <li><%=tour.activity.name%></li>
+    <li><%=tour.trip.tourist.name %></li>
+    <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
+    <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
+  <%end%>
+Rejected Tours:<br>
+  <% current_user.rejected_led_tours.each do |tour| %><br>
+    <li><%=tour.activity.name%></li>
+    <li><%=tour.trip.tourist.name %></li>
+    <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
+    <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
+  <%end%>
+Pending Tours:<br>
+  <% current_user.pending_led_tours.each do |tour| %><br>
+    <li><%=tour.activity.name%></li>
+    <li><%=tour.trip.tourist.name %></li>
+    <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
+    <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
+
+    <%= form_for tour do |f| %>
+      <%= f.hidden_field :status, :value => "accepted" %>
+      <%= f.submit "Accept" %>
+    <% end %>
+
+    <%= form_for tour do |f| %>
+      <%= f.hidden_field :status, :value => "rejected" %>
+      <%= f.submit "Reject" %>
+    <% end %>
+
+  <%end%>
+
