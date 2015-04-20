@@ -1,1 +1,30 @@
+<center><h1>Headed to: <%=@trip.city.name%></h1>
+<p>Start date of trip: <%=@trip.start_date.to_formatted_s(:long_ordinal)%></p>
+<p>End date of trip: <%=@trip.end_date.to_formatted_s(:long_ordinal)%></p></center><br>
+  <center><h3>Tours for your Trip</h3></center>
 
+  <%unless @trip.accepted_tours.empty?%> 
+    <center><h3>Confirmed:</h3></center>
+    <%@trip.accepted_tours.each do |tour| %>
+       <center><b><p><%=tour.activity.name%></b></center>
+     <ul>
+       <center>Start time of tour: <%=tour.start_time.to_formatted_s(:long_ordinal)%><br>
+        End time of tour: <%=tour.end_time.to_formatted_s(:long_ordinal)%></center>
+     </ul>
+    <%end%>
+  <%end%>
+
+  <%unless @trip.pending_tours.empty?%>   
+    <h3><center> Pending:</h3></center>
+    <%@trip.pending_tours.each do |tour| %>
+       <center><b><p><%=tour.activity.name%></b></center>
+     <ul>
+       <center>Start time of tour: <%=tour.start_time.to_formatted_s(:long_ordinal)%><br>
+        End time of tour: <%=tour.end_time.to_formatted_s(:long_ordinal)%></center>
+     </ul>
+    <%end%>
+  <%end%>
+  
+  <% if @trip.start_date > Date.today %>
+    <center><p><%= link_to "Find a Tour Guide", trip_users_path(@trip) %></p></center>
+  <%end%>
