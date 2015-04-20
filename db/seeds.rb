@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 us = Country.create(name: "USA")
 nyc = City.create(name: "NYC", country_id: us.id)
 bob = User.create(name: "Robert", nickname: "Bob", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "I love burgers and I'm free on Fridays.", city_id: nyc.id)
@@ -28,5 +20,3 @@ colosseum_tour = Tour.create(trip_id: italy_trip.id, activity_id: colosseum.id, 
 nyc_trip = Trip.create(tourist_id: linda.id, city_id: nyc.id, start_date: Date.today, end_date: Date.today + 5)
 
 karaoke_tour = Tour.create(trip_id: nyc_trip.id, activity_id: karaoke.id, start_time: Date.today + 1, end_time: Date.today + 3)
-
-

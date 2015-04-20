@@ -30,7 +30,6 @@
     <%end%>   
 
 
-
   <br><b>Past Trips:</b></br>
     <% current_user.trips.each do |trip|%>
       <% if trip.start_date < Date.today%>
