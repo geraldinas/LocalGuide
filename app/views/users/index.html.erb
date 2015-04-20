@@ -4,8 +4,10 @@ Showing guides in:
 	<p><%=user.name%></p>
 	<img src="<%=user.image_url%>">
 	<%=user.description%>
+
 	<%user.activities.each do |activity|%>
 		<p><%=activity.name%></p>
+		
 		<%=form_for Tour.new do |f|%>
 			<%= f.hidden_field :activity_id, value: activity.id%>
 			<%= f.hidden_field :trip_id, value: @trip.id%>
