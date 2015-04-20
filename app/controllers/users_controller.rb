@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if User.added_email_and_city?(user_params)
       @user.update(user_params)
+      UserMailer.welcome_email(@user).deliver_now
       redirect_to '/profile'
     else
       flash[:notice]= "Sorry, please select a valid city and enter your email"
