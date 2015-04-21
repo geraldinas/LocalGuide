@@ -1,5 +1,5 @@
 <center>
-<%=form_for @activity do |f| %>
+  <%=form_for @activity do |f| %>
     <%= f.hidden_field :guide_id, :value => current_user.id%>
     <%= f.label :name%><br />
     <%= f.text_field :name%><br>
@@ -7,15 +7,14 @@
     <%= f.text_field :description %><br>
     <%= f.label :availability %><br />
     <%= f.text_field :availability %><br>
-    <%= f.fields_for :location do |builder| %>
-      
-      <fieldset>
-          <%=builder.label :content, "Location"%><br />
-          <%=builder.text_area :content%><br><br>
-      </fieldset>
+
+    <%= f.fields_for :locations, Location.new do |  builder| %>
+      <%= render 'location_fields', f: builder %>
     <%end%>
+    <%= link_to_add_fields "Add location", f, :locations%>
+
     <div class='actions'>
       <%= f.submit "submit" %>
     </div>
-<% end %>
+  <% end %>  
 </center>
