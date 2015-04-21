@@ -45,8 +45,8 @@
         <% current_user.accepted_led_tours.each do |tour| %>
           <li><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
           <li><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
-          <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
-          <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
+          <ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
+          <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
         <%end%><br>
       
       <b>Rejected Tours:</b><br>
