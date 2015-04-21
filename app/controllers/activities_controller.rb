@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
 	end
 
 	def create
-		@activity = Activity.new(activity_params)
+    @activity = Activity.new(activity_params)
 		if @activity.save
 			redirect_to "/activities/#{@activity.id}"
 		else
@@ -30,6 +30,6 @@ class ActivitiesController < ApplicationController
 	private
 	
 	def activity_params
-		params.require(:activity).permit(:name, :description, :guide_id, :availability)
+		params.require(:activity).permit(:name, :description, :guide_id, :availability, :locations)
 	end
 end

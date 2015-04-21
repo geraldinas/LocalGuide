@@ -1,12 +1,21 @@
 <center>
 <%=form_for @activity do |f| %>
     <%= f.hidden_field :guide_id, :value => current_user.id%>
-    <%= f.label :name%>
-    <%= f.text_field :name%><br><br>
-    <%= f.label :description %>
-    <%= f.text_field :description %><br><br>
-    <%= f.label :availability %>
-    <%= f.text_field :availability %><br><br>
-    <%= f.submit "submit" %>
+    <%= f.label :name%><br />
+    <%= f.text_field :name%><br>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %><br>
+    <%= f.label :availability %><br />
+    <%= f.text_field :availability %><br>
+    <%= f.fields_for :location do |builder| %>
+      
+      <fieldset>
+          <%=builder.label :content, "Location"%><br />
+          <%=builder.text_area :content%><br><br>
+      </fieldset>
+    <%end%>
+    <div class='actions'>
+      <%= f.submit "submit" %>
+    </div>
 <% end %>
 </center>

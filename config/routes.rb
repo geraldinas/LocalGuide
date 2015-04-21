@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   resources :notifications, :only => [:index]
 
+  resources :locations, :only => [:index, :create, :new]
+
   resources :trips do 
     resources :users, only: [:index]
   end

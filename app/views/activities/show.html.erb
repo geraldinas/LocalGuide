@@ -3,6 +3,10 @@
   <h3>Activity: <%= @activity.name %></h3>
   <h3>Description: <%= @activity.description %></h3>
   <h3>Availability: <%= @activity.availability %></h3><br>
+  <h3>Locations:  <%= @activity.locations.each do |location|%>
+                    <%=location.name%>
+                  <%end%>
   <%= link_to "Edit", edit_activity_path(@activity), :class => "btn btn-info btn-sm"%><br><br>
   <%= link_to "Back to Profile", profile_path, :class => "btn btn-info btn-sm"%><br>
 </center>
+
