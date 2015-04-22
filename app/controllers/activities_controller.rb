@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
 	end
 
 	def create
-		@activity = Activity.new(activity_params)
+    @activity = Activity.new(activity_params)
 		if @activity.save
 			redirect_to "/activities/#{@activity.id}"
 		else
@@ -22,7 +22,7 @@ class ActivitiesController < ApplicationController
   end  
 
   def update
-  	@activity = User.find(params[:id])
+  	@activity = Activity.find(params[:id])
   	@activity.update(activity_params)
   	redirect_to '/profile'
   end
@@ -30,6 +30,6 @@ class ActivitiesController < ApplicationController
 	private
 	
 	def activity_params
-		params.require(:activity).permit(:name, :description, :guide_id, :availability)
+		params.require(:activity).permit(:name, :description, :guide_id, :availability, :locations_attributes => [:name, :address])
 	end
 end

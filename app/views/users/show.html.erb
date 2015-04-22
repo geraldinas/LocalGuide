@@ -1,8 +1,7 @@
 <center>
   <h1> <%=@user.name%>'s Profile</h1>
   <legend>Personal Info:</legend>
-   <%= link_to "Send Message", new_message_path, :class => "btn btn-info btn-sm"%>
-
+  
   <img src="<%= current_user.image_url %>" height="72" weight="72">
   <p><h4><%= @user.name %></h4></p>
   <b>Location: </b><p><%= @user.city.name %></p>

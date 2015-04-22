@@ -4,7 +4,6 @@ class CreateActivities < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :guide_id
-      
       t.timestamps null: false
     end
   end
