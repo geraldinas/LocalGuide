@@ -1,5 +1,13 @@
 class ActivitiesController < ApplicationController
 
+  def index
+    @activity = Activity.all
+    @hash = Gmaps4rails.build_markers(@activity) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
+  end
+
 	def new
 		@activity = Activity.new
 	end
@@ -15,6 +23,15 @@ class ActivitiesController < ApplicationController
 
 	def show
 		@activity = Activity.find(params[:id])
+    locations = @activity.locations
+    @location_json = Gmaps4rails.build_markers(locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.infowindow location.name
+      marker.json ({
+        
+      })
+    end
 	end
 
 	def edit

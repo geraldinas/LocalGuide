@@ -17,7 +17,7 @@
   <%unless @trip.pending_tours.empty?%>   
     <h3> Pending:</h3>
     <%@trip.pending_tours.each do |tour| %>
-      <b><%=tour.activity.name%></b>
+      <p><b><%=tour.activity.name%></b></p>
         Start time of tour: <%=tour.start_time.to_formatted_s(:long_ordinal)%><br>
         End time of tour: <%=tour.end_time.to_formatted_s(:long_ordinal)%>
     <%end%>
