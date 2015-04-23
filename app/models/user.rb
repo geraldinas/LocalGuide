@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :city
+  has_many :availabilities, foreign_key: "guide_id" 
   has_many :activities, foreign_key: "guide_id"
   has_many :led_tours, through: :activities
   has_many :trips, foreign_key: "tourist_id"

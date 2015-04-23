@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.2.0"
 
+gem 'local_time'
 gem 'gmaps4rails'
 gem 'geocoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
