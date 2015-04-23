@@ -10,6 +10,15 @@
   <br><b>All activities <%=@guide.name%> is Hosting:</b></br>
     <% @guide.activities.each do |activity| %>
       <%= link_to(activity.name, activity_path(activity)) %>
+      <%=form_for Tour.new do |f|%>
+        <%= f.hidden_field :activity_id, value: activity.id%>
+        <%= f.hidden_field :trip_id, value: @trip.id%>
+        <%= f.label :start_time%>
+        <%= f.time_field :start_time%><br>
+        <%= f.label :end_time %>
+        <%= f.time_field :end_time%><br><br>
+        <%= f.submit "Request Tour"%>
+     <%end%>
     <% end %>
-      <%= render partial:'tour'%>
+      
 </center>
