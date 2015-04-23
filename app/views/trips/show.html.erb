@@ -24,6 +24,6 @@
   <%end%>
   
   <% if @trip.start_date > Date.today %>
-    <%= link_to "Find a Tour Guide", trip_users_path(@trip)%>
+    <%= link_to "Find a Tour Guide", trip_guides_path(@trip)%>
   <%end%>
 </center>

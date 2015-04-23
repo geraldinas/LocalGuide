@@ -5,11 +5,9 @@
   <h3>Description: <%= @activity.description %></h3>
   <h3>Availability: <%= @activity.availability %></h3><br>
   <h3>Location:  <% @activity.locations.each do |location|%>
-                    <%=location.name%><br>
-      Address:   <%=location.address%><br><br>
-      Latitude:  <%=location.latitude%><br><br> 
-      Longitude: <%=location.longitude%><br><br>
-                  <%end%>
+      <%=location.name%><br>
+      Address: <%=location.address%><br><br>
+  <%end%>
 
   <div style='width: 800px;'>
     <div id="map" style='width: 800px; height: 500px;'></div>
