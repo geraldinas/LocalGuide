@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   get "/auth/facebook/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout  
+
+  get "/trips/:id/guides" => "users#index", :as => :trip_guides
+  get "/trips/:trip_id/guides/:id" => "users#guide", :as => :trip_guide
+
   
   resources :activities, :only => [:create, :new, :show, :update, :edit]
 
@@ -18,10 +22,6 @@ Rails.application.routes.draw do
   resources :notifications, :only => [:index]
 
   resources :locations, :only => [:index, :create, :new]
-
-  resources :trips do 
-    resources :users, only: [:index]
-  end
 
   resources :tours, :only => [:create, :update]
 end

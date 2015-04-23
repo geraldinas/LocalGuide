@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
   
   def index
-    @trip = Trip.find(params[:trip_id])
+    @trip = Trip.find(params[:id])
     @users = @trip.city.users_with_activities
+  end
+
+  def guide
+    @trip = Trip.find(params[:trip_id])
+    @guide = User.find(params[:id])
   end
 
   def profile
