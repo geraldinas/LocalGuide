@@ -39,6 +39,16 @@
 
   <div class="container" "row">
       <h3><%= link_to "My Notifications", notifications_path %></h3>
+
+   Add Availability: 
+  <%=form_for Availability.new do |f|%><br>
+      <%= f.hidden_field :guide_id %>
+      <%= f.label :start_date %>
+      <%= f.date_select :start_date %>
+      <%= f.label :end_date %>
+      <%= f.date_select :end_date %>
+      <%= f.submit "Update"%>
+  <%end%>
 </center>
 </div>
 

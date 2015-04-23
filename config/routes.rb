@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:edit, :update, :show]
   
-  resources :availabilities, :only => [:new] 
+  resources :availabilities, :only => [:new, :create] 
 
   resources :trips, :only => [:new, :show, :create, :index] 
 
