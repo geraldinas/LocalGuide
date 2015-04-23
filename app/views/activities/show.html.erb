@@ -8,7 +8,7 @@
   <%end%>
     
 
-  <%unless params[:trip_id] == nil %>   
+    <%unless params[:trip_id] == nil %>   
       <%=form_for Tour.new do |f|%>   
         <%= f.hidden_field :activity_id, value: @activity.id%>
         <%= f.hidden_field :trip_id, value: params[:trip_id]%>

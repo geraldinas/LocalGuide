@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require local_time
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
 //= require underscore

@@ -1,11 +1,12 @@
 <center>
   <h1> <%=@user.name%>'s Profile</h1>
   <legend>Personal Info:</legend>
-  
+      
   <img src="<%= @user.image_url %>" height="72" weight="72">
   <p><h4><%= @user.name %></h4></p>
   <b>Location: </b><p><%= @user.city.name %></p>
   <b>Email: </b><%= @user.email %><br></p>
+
 
   <br><b>All activities <%=@user.name%> is Hosting:</b></br>
   <% @user.activities.each do |activity| %>

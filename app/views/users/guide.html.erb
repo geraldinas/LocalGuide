@@ -1,6 +1,6 @@
 <center>
   <h1> <%=@guide.name%>'s Profile</h1>
-  <legend>Personal Info:</legend>
+  <legend>Personal Info:</legend> 
   
   <img src="<%= @guide.image_url %>" height="72" weight="72">
   <p><h4><%= @guide.name %></h4></p>
@@ -14,6 +14,11 @@
       <%=form_for Tour.new do |f|%>
         <%= f.hidden_field :activity_id, value: activity.id%>
         <%= f.hidden_field :trip_id, value: @trip.id%>
-     <%end%>
+      <%end%>
     <% end %>      
+
+  Availability: <%@guide.availabilities.each do |availability|%><br>
+      <%= local_time(availability.start_date)%> -
+      <%= local_time(availability.end_date)%>
+  <%end%>
 </center>

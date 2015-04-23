@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:edit, :update, :show]
   
+  resources :availabilities, :only => [:new] 
+
   resources :trips, :only => [:new, :show, :create, :index] 
 
   resources :notifications, :only => [:index]
