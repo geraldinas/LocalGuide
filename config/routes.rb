@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/trips/:id/guides" => "users#index", :as => :trip_guides
   get "/trips/:trip_id/guides/:id" => "users#guide", :as => :trip_guide
 
+  get "/trips/:trip_id/guides/:guide_id/activities/:id" => "activities#show", :as => :guide_activity
   
   resources :activities, :only => [:create, :new, :show, :update, :edit]
 

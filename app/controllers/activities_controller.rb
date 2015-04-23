@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
 
   def index
+    @trip = Trip.find(params[:id])
     @activity = Activity.all
     @hash = Gmaps4rails.build_markers(@activity) do |user, marker|
       marker.lat user.latitude
