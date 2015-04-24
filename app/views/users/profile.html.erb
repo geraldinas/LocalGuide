@@ -41,14 +41,13 @@
       <h3><%= link_to "My Notifications", notifications_path %></h3>
 
    Add Availability: 
-  <%=form_for Availability.new do |f|%><br>
-      <%= f.hidden_field :guide_id %>
-      <%= f.label :start_date %>
-      <%= f.date_select :start_date %>
-      <%= f.label :end_date %>
-      <%= f.date_select :end_date %>
-      <%= f.submit "Update"%>
+  <%= render partial:'availability_form' %>
+    Availability: <%current_user.availabilities.each do |availability|%><br>
+      <%= local_time(availability.start_date)%> -
+      <%= local_time(availability.end_date)%>
   <%end%>
+    <%= render partial:'availability_form' %>
+
 </center>
 </div>
 
