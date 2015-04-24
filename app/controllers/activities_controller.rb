@@ -15,7 +15,6 @@ class ActivitiesController < ApplicationController
 
 	def create
     @activity = Activity.new(activity_params)
-		binding.pry
     if @activity.save
       #add if statement that only redirects you the first time you make activity
 
