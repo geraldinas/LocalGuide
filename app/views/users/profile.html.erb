@@ -37,6 +37,7 @@
       <%end%> 
     <%end%>
 
+<<<<<<< HEAD
   <div class="container" "row">
       <h3><%= link_to "My Notifications", notifications_path %></h3>
 
@@ -47,6 +48,18 @@
       <%= local_time(availability.end_date)%>
   <%end%>
     <%= render partial:'availability_form' %>
+=======
+<br><br>
+  Availability: <b>
+    <% current_user.availabilities.each do |avail|%>
+      <%= local_time(avail.start_date)%> -
+      <%= local_time(avail.end_date)%><br>
+    <%end%>
+
+
+<div class="container" "row">
+    <h3><%= link_to "My Notifications", notifications_path %></h3>
+>>>>>>> development
 
 </center>
 </div>

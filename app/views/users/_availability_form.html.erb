@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     <%=form_for Availability.new do |f|%><br>
       <%= f.hidden_field :guide_id, :value => current_user.id%>
       <%= f.label :start_date %>
@@ -6,3 +7,14 @@
       <%= f.date_select :end_date %>
       <%= f.submit%>
   <%end%>
+=======
+ Add Availability: 
+<%=form_for Availability.new do |f|%><br>
+    <%= f.hidden_field :guide_id %>
+    <%= f.label :start_date %>
+    <%= f.datetime_local_field :start_date %>
+    <%= f.label :end_date %>
+    <%= f.datetime_local_field :end_date %>
+    <%= f.submit "Update"%>
+<%end%>
+>>>>>>> development
