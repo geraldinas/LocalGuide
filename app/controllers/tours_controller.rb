@@ -3,7 +3,7 @@ class ToursController < ApplicationController
 	def create
 		@tour = Tour.create(tour_params)
     Notification.create(description: "New tour has been booked by #{current_user.name}", user: @tour.guide)
-    UserMailer.tour_request_email(@tour.guide).deliver_now
+    #UserMailer.tour_request_email(@tour.guide).deliver_now
     redirect_to "/trips/#{@tour.trip.id}"
 	end
 

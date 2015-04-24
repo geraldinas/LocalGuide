@@ -38,7 +38,7 @@
     <%end%>
 
 <br><br>
-  Availability: <b>
+  Availability:<br> <b>
     <% current_user.availabilities.each do |avail|%>
       <%= local_time(avail.start_date)%> -
       <%= local_time(avail.end_date)%><br>
@@ -50,4 +50,3 @@
 
 </center>
 </div>
-

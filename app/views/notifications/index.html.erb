@@ -1,31 +1,29 @@
 <center>
-<% @notifications.each do |notification| %>
-  <%=notification.description%>
-<%end%>
     <h2>Requested Tours</h2>
 
       <b>Accepted Tours:</b><br>
         <% current_user.accepted_led_tours.each do |tour| %>
-          <li><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
-          <li><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
-          <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
-          <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
+          <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
+          <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
+          <ul><ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
+          <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></ul></ul>
         <%end%><br>
       
       <b>Rejected Tours:</b><br>
         <% current_user.rejected_led_tours.each do |tour| %><br>
-          <li><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
-          <li><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
-          <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
-          <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
+          <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
+          <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
+          <ul><ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
+          <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
         <%end%><br>
       
       <b>Pending Tours:<br></b>
+
         <% current_user.pending_led_tours.each do |tour| %><br>
-          <li><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
-          <li><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
-          <ul><li><%=tour.start_time.to_formatted_s(:long_ordinal)%></li>
-          <li><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
+          <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
+          <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
+          <ul><ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
+          <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></ul></ul>
 
 
       <%= form_for tour do |f| %>
@@ -39,5 +37,5 @@
       <% end %>
     <%end%>  
 </center>
-</div>
+
 
