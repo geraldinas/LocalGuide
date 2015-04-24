@@ -12,13 +12,16 @@ Rails.application.routes.draw do
 
   get "/trips/:trip_id/guides/:guide_id/activities/:id" => "activities#show", :as => :guide_activity
   
+  #get "/guides/:guide_id/availabilities/:id" => "availabilities#new", :as => :guide_availability
+  #http://localhost:3000/guides/:guide_id/availabilities/:availability_id
+  
   resources :activities, :only => [:create, :new, :show, :update, :edit]
 
   resources :ratings, :only => [:show, :index, :create, :update]
 
   resources :users, :only => [:edit, :update, :show]
   
-  resources :availabilities, :only => [:new, :create] 
+  resources :availabilities, :only => [:new, :create, :show] 
 
   resources :trips, :only => [:new, :show, :create, :index] 
 
