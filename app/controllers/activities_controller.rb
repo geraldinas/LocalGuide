@@ -46,6 +46,12 @@ class ActivitiesController < ApplicationController
   	@activity.update(activity_params)
   	redirect_to '/profile'
   end
+
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to '/profile'
+  end
 	
 	private
 	

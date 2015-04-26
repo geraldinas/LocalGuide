@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #get "/guides/:guide_id/availabilities/:id" => "availabilities#new", :as => :guide_availability
   #http://localhost:3000/guides/:guide_id/availabilities/:availability_id
   
-  resources :activities, :only => [:create, :new, :show, :update, :edit]
+  resources :activities, :only => [:create, :new, :show, :update, :edit, :destroy]
 
   resources :ratings, :only => [:show, :index, :create, :update]
 
