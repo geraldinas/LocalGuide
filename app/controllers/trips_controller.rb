@@ -21,6 +21,12 @@ class TripsController < ApplicationController
 		@trips = Trip.all
 	end
 
+  def destroy
+    @trip = Trip.find(params[:id])
+    @trip.destroy
+    redirect_to '/profile'
+  end
+
 	private
 
 	def trip_params
