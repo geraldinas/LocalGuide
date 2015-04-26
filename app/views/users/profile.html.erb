@@ -8,7 +8,7 @@
 
       <img src="<%= current_user.image_url %>" height="100" weight="100">
       <p><h3><%= current_user.name %></h3></p>
-      <b>My Location: </b><h4><p><b><%= current_user.city.name %></p></h4>
+      <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
       <b>Contact Me At: </b><h4><%= current_user.email %><br></p></h4><br /><br />
       <%= link_to "Edit", edit_user_path(current_user), :class => "btn btn-info btn-sm"%>
     </div></center>
@@ -46,7 +46,7 @@
   <p> --------------------------------------------- </p> <br>
 
 
-  Your Availability for Tours:<br> <b>
+  Your Availability for Tours:<br>
     <% current_user.availabilities.each do |avail|%>
       <h4><%= local_time(avail.start_date)%> -
       <%= local_time(avail.end_date)%><br></h4>

@@ -1,21 +1,21 @@
 <center>
   <h1> <%=@user.name%>'s Profile</h1>
-  <legend>Personal Info:</legend>
+  <legend>General Info:</legend>
       
-  <img src="<%= @user.image_url %>" height="72" weight="72">
+  <img src="<%= @user.image_url %>" height="100" weight="100">
   <p><h4><%= @user.name %></h4></p>
-  <b>Location: </b><p><%= @user.city.name %></p>
-  <b>Email: </b><%= @user.email %><br></p>
+  <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
+  <b>Contact Me At: </b><h4><%= current_user.email %><br></p></h4>
 
 
-  <br><b>All activities <%=@user.name%> is Hosting:</b></br>
+  <h4><b>All activities <%=@user.name%> is Hosting:</b><br></h4>
   <% @user.activities.each do |activity| %>
-      <%= link_to(activity.name, activity_path(activity)) %>
-  <% end %><br>
-
+      <p><%= link_to(activity.name, activity_path(activity)) %></p>
+  <% end %>
+<p> ----------------------------------------------------- </p><br>
     Availability: <b><br>
     <% current_user.availabilities.each do |avail|%>
-      <%= local_time(avail.start_date)%> -
-      <%= local_time(avail.end_date)%><br>
+      <h4><%= local_time(avail.start_date)%> -
+      <%= local_time(avail.end_date)%><br></h4>
     <%end%>
 </center>
