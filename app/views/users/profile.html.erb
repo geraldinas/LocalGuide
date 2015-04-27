@@ -9,15 +9,12 @@
       <img src="<%= current_user.image_url %>" height="100" weight="100">
       <p><h3><%= current_user.name %></h3></p>
       <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
-      <b>Contact Me At: </b><h4><%= current_user.email %><br></p></h4><br /><br />
-      <%= link_to "Edit", edit_user_path(current_user), :class => "btn btn-info btn-sm"%>
+      <b>Contact Me At: </b><h4><%= current_user.email %><br></p></h4>
+      <%= link_to "Edit", edit_user_path(current_user)%>
     </div></center>
 
     <div class="col-md-9"> 
   <center>
-
-  <h1> Welcome to Your Dashboard </h1>
-  <h3><%= link_to "My Notifications", notifications_path %></h3>
 
   <p><br><b>You are hosting the the following tour activities:</b><br></p>
   <% current_user.activities.each do |activity| %>
