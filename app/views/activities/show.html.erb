@@ -1,11 +1,7 @@
 <center>
   <h1>Activity: <%= @activity.name %></h3>
-  <h1><%= @activity.avatar %></h3>
   <h3>Description: <%= @activity.description %></h3>
-  <div class= "painting">
-    <%=image_tag @activity.avatar_url.to_s%>
-  </div>
-  
+    <%=image_tag @activity.avatar_url(:thumb)%>
   <h3>Location:  <% @activity.locations.each do |location|%>
       <%=location.name%><br>
       Address: <%=location.address%><br><br>

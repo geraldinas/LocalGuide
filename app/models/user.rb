@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :tourist_activities, through: :tours, :source => :activity
   has_many :guides, through: :tourist_activities
   has_many :notifications
+  mount_uploader :avatar, AvatarUploader
   delegate :country, to: :city 
 
   def self.added_email_and_city?(params)

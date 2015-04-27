@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427205436) do
+ActiveRecord::Schema.define(version: 20150427220202) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20150427205436) do
     t.string   "image_url"
     t.string   "description"
     t.integer  "city_id"
+    t.string   "avatar"
   end
 
 end
