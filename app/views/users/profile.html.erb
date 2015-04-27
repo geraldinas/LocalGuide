@@ -43,14 +43,15 @@
   <%= link_to "Add New Trip", new_trip_path, :class => "btn btn-info btn-sm"%>
   <p> --------------------------------------------- </p> <br>
 
+  <%= link_to "Add Availability", new_availability_path%>
 
   Your Availability for Tours:<br>
     <% current_user.availabilities.each do |avail|%>
-      <%= avail.start_date.strftime '%B %d %Y %l:%M %P' %> -
-      <%= avail.end_date.strftime '%B %d %Y %l:%M %P' %><br>
+      <%= avail.day.name %>
+      <%= avail.start_time.strftime '%l:%M %P' %> -
+      <%= avail.end_time.strftime '%l:%M %P' %><br>
+      <%= link_to "Edit", edit_availability_path(avail)%>    
     <%end%>
-  <%= link_to "Edit", edit_availability_path(current_user.availabilities)%>    
   </div>
  </div>
-
 </body></center>

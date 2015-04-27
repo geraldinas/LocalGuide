@@ -8,9 +8,17 @@
   <b>Email:    </b><%= @guide.email %><br></p>
 
   Availability: <%@guide.availabilities.each do |availability|%><br>
-      <%= local_time(availability.start_date)%> -
-      <%= local_time(availability.end_date)%>
+      <%= local_time(availability.start_time)%> -
+      <%= local_time(availability.end_time)%>
   <%end%>
+
+  <% current_user.availabilities.each do |avail|%>
+      <%= avail.day.name %>
+      <%= avail.start_time.strftime '%l:%M %P' %> -
+      <%= avail.end_time.strftime '%l:%M %P' %><br>
+      <%= link_to "Edit", edit_availability_path(avail)%>    
+    <%end%>
+  
   <br><b>All activities <%=@guide.name%> is Hosting:</br>
       
       <% @guide.activities.each do |activity| %>

@@ -2,11 +2,13 @@
 
 Add Availability: 
 <%=form_for Availability.new do |f|%><br>
-  <%= f.hidden_field :guide_id, value: current_user.id%> 
-  <%= f.label :start_date %>
-  <%= f.datetime_local_field :start_date %>
-  <%= f.label :end_date %>
-  <%= f.datetime_local_field :end_date %>
+  <%= f.hidden_field :guide_id, value: current_user.id%>
+  <%= f.label :day_id, "Select Day" %> 
+  <%= f.collection_select :day_id, Day.all, :id, :name%>
+  <%= f.label :start_time %>
+  <%= f.time_field :start_time %>
+  <%= f.label :end_time %>
+  <%= f.time_field :end_time %>
   <%= f.submit "Add Availability"%>
 <%end%>
 </center>

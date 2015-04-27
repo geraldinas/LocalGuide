@@ -6,6 +6,8 @@ class AvailabilitiesController < ApplicationController
 
   def update
     @availability = Availability.find(params[:id])
+    @availability.update(availability_params)
+    redirect_to '/profile'
   end
 
   def new
@@ -23,6 +25,6 @@ class AvailabilitiesController < ApplicationController
 
 private
   def availability_params
-    params.require(:availability).permit(:start_date, :end_date, :guide_id)
+    params.require(:availability).permit(:start_time, :end_time, :guide_id, :day_id)
   end  
 end

@@ -16,9 +16,7 @@ class ActivitiesController < ApplicationController
 	def create
     @activity = Activity.new(activity_params)
     if @activity.save
-      #add if statement that only redirects you the first time you make activity
-
-      redirect_to new_availability_path
+      redirect_to '/profile'
 		else
 			render :new
 		end

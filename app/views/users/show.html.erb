@@ -17,10 +17,10 @@
     <div id='calendar'>
       <%= calendar_for(current_user.availabilities) do |t| %>
         <%= t.head(*%w( Mon Tue Wed Thu Fri Sat Sun )) %>
-        <%= t.day(day_method: :start_date) do |day, availabilities| %>
+        <%= t.day(day_method: :start_time) do |day, availabilities| %>
           <%= day.day %><br>
           <% availabilities.each do |availability| %>
-            Available: <br><%= availability.start_date.strftime '%l:%M %P' %>
+            Available: <br><%= availability.start_time.strftime '%l:%M %P' %>
           <% end %>
         <% end %>
       <% end %>

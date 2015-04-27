@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 
 ruby "2.2.0"
-
-gem 'bootstrap-sass'
 gem 'local_time'
-gem 'gmaps4rails'
+gem 'carrierwave'
 gem 'geocoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
