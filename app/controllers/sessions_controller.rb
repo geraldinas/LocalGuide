@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
     session[:user_id] = user.id
     if user.city.nil? || user.email.nil?
-      redirect_to edit_user_path(user)
+       redirect_to edit_user_path(user)
     else  
       redirect_to '/profile'
       flash[:notice] = "Signed In!"

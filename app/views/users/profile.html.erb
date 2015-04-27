@@ -48,8 +48,8 @@
 
   Your Availability for Tours:<br>
     <% current_user.availabilities.each do |avail|%>
-      <h4><%= local_time(avail.start_date)%> -
-      <%= local_time(avail.end_date)%><br></h4>
+      <%= avail.start_date.strftime '%B %d %Y %l:%M %P' %> -
+      <%= avail.end_date.strftime '%B %d %Y %l:%M %P' %><br>
     <%end%>
 
   </div>
