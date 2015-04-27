@@ -1,17 +1,27 @@
 class TripsController < ApplicationController
 
-	def new
-		@trip = Trip.new 
-	end
+  def edit
+    @trip = Trip.find(params[:id])
+  end 
+  
+  def new
+    @trip = Trip.new 
+  end
 
-	def create
-		@trip = Trip.new(trip_params)
-		if @trip.save 
+  def create
+    @trip = Trip.new(trip_params)
+    if @trip.save 
       redirect_to "/trips/#{@trip.id}"
     else
-    	render :new
+      render :new
     end
-	end
+  end
+
+
+  def update
+    @trip = Trip.find(params[:id])
+    redirect_to "/trips/#{@trip.id}"
+  end
 
 	def show
 		@trip = Trip.find(params[:id])
