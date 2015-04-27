@@ -12,17 +12,13 @@
   <% @user.activities.each do |activity| %>
       <p><%= link_to(activity.name, activity_path(activity)) %></p>
   <% end %>
-  
-    Availability: <b><br>
-    <div id='calendar'>
-      <%= calendar_for(current_user.availabilities) do |t| %>
-        <%= t.head(*%w( Mon Tue Wed Thu Fri Sat Sun )) %>
-        <%= t.day(day_method: :start_time) do |day, availabilities| %>
-          <%= day.day %><br>
-          <% availabilities.each do |availability| %>
-            Available: <br><%= availability.start_time.strftime '%l:%M %P' %>
-          <% end %>
-        <% end %>
-      <% end %>
+
+  Availability for Tours:<br>
+    <% current_user.availabilities.each do |avail|%>
+      <%= avail.day.name %>
+      <%= avail.start_time.strftime '%l:%M %P' %> -
+      <%= avail.end_time.strftime '%l:%M %P' %><br>
+      <%= link_to "Edit", edit_availability_path(avail)%>    
+    <%end%>
     </div>
 </center>
