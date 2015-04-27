@@ -1,4 +1,5 @@
 us = Country.create(name: "USA")
+days = Day.create([{name: "Monday"},{name: "Tuesday"},{name: "Wednesday"},{name: "Thursday"}, {name: "Friday"}])
 nyc = City.create(name: "NYC", country_id: us.id)
 bob = User.create(name: "Robert", nickname: "Bob", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "I love burgers and I'm free on Fridays.", city_id: nyc.id)
 louise = User.create(name: "Lola", nickname: "Louise", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "I love bunny ear hats and I'm free on thursdays.", city_id: nyc.id)

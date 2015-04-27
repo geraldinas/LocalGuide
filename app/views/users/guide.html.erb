@@ -7,12 +7,7 @@
   <b>Location: </b><p><%= @guide.city.name %></p>
   <b>Email:    </b><%= @guide.email %><br></p>
 
-  Availability: <%@guide.availabilities.each do |availability|%><br>
-      <%= local_time(availability.start_date)%> -
-      <%= local_time(availability.end_date)%>
-  <%end%>
   <br><b>All activities <%=@guide.name%> is Hosting:</br>
-      
       <% @guide.activities.each do |activity| %>
         <%= link_to(activity.name, guide_activity_path(@trip,@guide,activity)) %>
       <%=form_for Tour.new do |f|%>

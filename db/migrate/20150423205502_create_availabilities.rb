@@ -1,8 +1,8 @@
 class CreateAvailabilities < ActiveRecord::Migration
   def change
     create_table :availabilities do |t|
-      t.datetime :start_date
-      t.datetime :end_date
+      t.time :start_time
+      t.time :end_time
       t.integer :guide_id
       t.timestamps null: false
     end

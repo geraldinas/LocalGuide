@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423205502) do
+ActiveRecord::Schema.define(version: 20150427200553) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 20150423205502) do
   end
 
   create_table "availabilities", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.time     "start_time"
+    t.time     "end_time"
     t.integer  "guide_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "day_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -37,6 +38,12 @@ ActiveRecord::Schema.define(version: 20150423205502) do
   end
 
   create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "days", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
