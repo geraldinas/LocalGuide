@@ -1,0 +1,41 @@
+<center>
+    <h2>Requested Tours</h2>
+
+      <b>Accepted Tours:</b><br>
+        <% current_user.accepted_led_tours.each do |tour| %>
+          <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
+          <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
+          <ul><ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
+          <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></ul></ul>
+        <%end%><br>
+      
+      <b>Rejected Tours:</b><br>
+        <% current_user.rejected_led_tours.each do |tour| %><br>
+          <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
+          <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
+          <ul><ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
+          <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
+        <%end%><br>
+      
+      <b>Pending Tours:<br></b>
+
+        <% current_user.pending_led_tours.each do |tour| %><br>
+          <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
+          <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
+          <ul><ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
+          <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></ul></ul>
+
+
+      <%= form_for tour do |f| %>
+        <%= f.hidden_field :status, :value => "accepted" %>
+        <%= f.submit "Accept" %>
+      <% end %>
+
+      <%= form_for tour do |f| %>
+        <%= f.hidden_field :status, :value => "rejected" %>
+        <%= f.submit "Reject" %>
+      <% end %>
+    <%end%>  
+</center>
+
+

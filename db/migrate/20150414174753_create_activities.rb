@@ -2,10 +2,8 @@ class CreateActivities < ActiveRecord::Migration
   def change
     create_table :activities do |t|
       t.string :name
-      t.string :activity_type
-      t.string :address
       t.text :description
-      
+      t.integer :guide_id
       t.timestamps null: false
     end
   end

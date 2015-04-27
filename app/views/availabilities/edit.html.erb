@@ -1,0 +1,13 @@
+<center>
+Add Availability: 
+<%=form_for @availability do |f|%><br>
+  <%= f.hidden_field :guide_id, value: current_user.id%>
+  <%= f.label :day_id, "Select Day" %> 
+  <%= f.collection_select :day_id, Day.all, :id, :name%>
+  <%= f.label :start_time %>
+  <%= f.time_field :start_time %>
+  <%= f.label :end_time %>
+  <%= f.time_field :end_time %>
+  <%= f.submit "Edit"%>
+<%end%>
+</center>

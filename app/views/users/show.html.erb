@@ -1,0 +1,24 @@
+<center>
+  <h1> <%=@user.name%>'s Profile</h1>
+  <legend>General Info:</legend>
+      
+  <img src="<%= @user.image_url %>" height="100" weight="100">
+  <p><h4><%= @user.name %></h4></p>
+  <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
+  <b>Contact Me At: </b><h4><%= current_user.email %><br></p></h4>
+
+
+  <h4><b>All activities <%=@user.name%> is Hosting:</b><br></h4>
+  <% @user.activities.each do |activity| %>
+      <p><%= link_to(activity.name, activity_path(activity)) %></p>
+  <% end %>
+
+  Availability for Tours:<br>
+    <% current_user.availabilities.each do |avail|%>
+      <%= avail.day.name %>
+      <%= avail.start_time.strftime '%l:%M %P' %> -
+      <%= avail.end_time.strftime '%l:%M %P' %><br>
+      <%= link_to "Edit", edit_availability_path(avail)%>    
+    <%end%>
+    </div>
+</center>

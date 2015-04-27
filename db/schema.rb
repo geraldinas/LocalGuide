@@ -11,35 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414193002) do
+ActiveRecord::Schema.define(version: 20150427200553) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
-    t.string   "activity_type"
-    t.string   "address"
     t.text     "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "guide_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "availabilities", force: :cascade do |t|
-    t.date     "start"
-    t.date     "end"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "guide_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "day_id"
   end
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "review_id"
-    t.integer  "user_id"
+    t.integer  "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,31 +43,59 @@ ActiveRecord::Schema.define(version: 20150414193002) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.text     "description"
-    t.integer  "rating"
-    t.integer  "tourist_id"
-    t.integer  "guest_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "searches", force: :cascade do |t|
+  create_table "days", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.integer  "activity_id"
+    t.string   "name"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "tours", force: :cascade do |t|
+    t.integer  "trip_id"
+    t.integer  "activity_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "status",      default: "pending"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.integer  "tourist_id"
+    t.integer  "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date     "end_date"
+    t.date     "start_date"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "current_guide"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "provider"
     t.string   "uid"
+    t.string   "email"
     t.string   "nickname"
     t.string   "image_url"
     t.string   "description"
-    t.string   "location"
+    t.integer  "city_id"
   end
 
 end

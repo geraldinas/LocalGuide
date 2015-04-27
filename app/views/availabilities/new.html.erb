@@ -1,0 +1,12 @@
+<center>HI this is your availabilities form please enter your available times:
+
+Add Availability: 
+<%=form_for Availability.new do |f|%><br>
+    <%= f.hidden_field :guide_id, :value => current_user.id%>
+    <%= f.label :start_time %>
+    <%= f.datetime_local_field :start_time %>
+    <%= f.label :end_time %>
+    <%= f.datetime_local_field :end_time %>
+    <%= f.submit "Update"%>
+<%end%>
+</center>

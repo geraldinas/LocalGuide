@@ -1,0 +1,9 @@
+ Add Availability: 
+<%=form_for Availability.new do |f|%><br>
+    <%= f.hidden_field :guide_id %>
+    <%= f.label :start_date %>
+    <%= f.datetime_local_field :start_time %>
+    <%= f.label :end_date %>
+    <%= f.datetime_local_field :end_time %>
+    <%= f.submit "Update"%>
+<%end%>

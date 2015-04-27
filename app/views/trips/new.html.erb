@@ -1,0 +1,12 @@
+<center>
+  <div class="row" "container">
+    <% if @trip.errors.any? %>
+      <div id="error_explanation">
+      <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <% @trip.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    <% end %>
+    <%= render partial:'form'%>
+</center>
+</div>
