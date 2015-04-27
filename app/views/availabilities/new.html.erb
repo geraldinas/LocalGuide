@@ -2,11 +2,20 @@
 
 Add Availability: 
 <%=form_for Availability.new do |f|%><br>
+<<<<<<< Updated upstream
   <%= f.hidden_field :guide_id, value: current_user.id%> 
   <%= f.label :start_date %>
   <%= f.datetime_local_field :start_date %>
   <%= f.label :end_date %>
   <%= f.datetime_local_field :end_date %>
   <%= f.submit "Update"%>
+=======
+    <%= f.hidden_field :guide_id, :value => current_user.id%>
+    <%= f.label :start_date %>
+    <%= f.datetime_local_field :start_date %>
+    <%= f.label :end_date %>
+    <%= f.datetime_local_field :end_date %>
+    <%= f.submit "Update"%>
+>>>>>>> Stashed changes
 <%end%>
 </center>
