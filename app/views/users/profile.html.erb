@@ -49,7 +49,7 @@
       <%= avail.start_date.strftime '%B %d %Y %l:%M %P' %> -
       <%= avail.end_date.strftime '%B %d %Y %l:%M %P' %><br>
     <%end%>
-
+  <%= link_to "Edit", edit_availability_path(current_user.availabilities)%>    
   </div>
  </div>
 
