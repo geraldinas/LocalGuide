@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 c= Country.create("name"=>"Germany")
 a =Country.create("name"=>"France")
 b= Country.create("name"=>"Belgium")
@@ -38,17 +36,6 @@ karaoke_tour = Tour.create(trip_id: nyc_trip.id, activity_id: karaoke.id, start_
 new_tour_booked = Notification.create(description: "Hi, I would like to book your tour", user: simone)
 
 
-
-
-
-
-
-
-
-
-
-
-=======
 country = Country.create(
   [
     {name: Faker::Address.country},
@@ -275,4 +262,3 @@ new_tour_booked = Notification.create(
     {description: "Hi, I would like to book your tour", user: User.all.sample.name}
   ]
   )
->>>>>>> 03bf2b9823854d5df0effa942448aaf287acadd0

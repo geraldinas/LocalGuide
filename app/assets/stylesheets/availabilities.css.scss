@@ -1,26 +1,3 @@
 // Place all the styles related to the availabilities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#calendar {
-	table {
-		// width: 100%;
-		thead {
-			th {
-				padding: 15px;
-				border: dashed #fff 1px;
-				background: #CBB
-			}	
-		}
-
-		tbody {
-			td {
-				padding: 10px;
-				border: solid #ccc 1px;
-
-				&.notmonth {
-					color: #ccc
-				}
-			}
-		}
-	}
-}
