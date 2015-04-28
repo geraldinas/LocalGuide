@@ -1,13 +1,25 @@
+
+c= Country.create("name"=>"Germany")
+a =Country.create("name"=>"France")
+b= Country.create("name"=>"Belgium")
+d=Country.create("name"=>"Netherlands")
+
 us = Country.create(name: "USA")
-days = Day.create([{name: "Monday"},{name: "Tuesday"},{name: "Wednesday"},{name: "Thursday"}, {name: "Friday"}])
+
+days = Day.create([{name: "Monday"},{name: "Tuesday"},{name: "Wednesday"},{name: "Thursday"}, {name: "Friday"}, {name: "Saturday"}, {name: "Sunday"}])
+
 nyc = City.create(name: "NYC", country_id: us.id)
+
 bob = User.create(name: "Robert", nickname: "Bob", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "I love burgers and I'm free on Fridays.", city_id: nyc.id)
+
 louise = User.create(name: "Lola", nickname: "Louise", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "I love bunny ear hats and I'm free on thursdays.", city_id: nyc.id)
 
 karaoke = Activity.create(name: "Karaoke bar", description: "get drunk", guide_id: louise.id)
 
 italy = Country.create(name: "Italy")
+
 rome = City.create(name: "Rome", country_id: italy.id)
+
 simone = User.create(name: "Simone", nickname: "Simon", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "My name is Simone and im free on Tuesdays.", email:"geraldinagalvarez@gmail.com", city_id: rome.id)
 
 linda = User.create(name: "Linda", nickname: "Lin", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "My name is Linda and im free on Wednesday.", city_id: rome.id)

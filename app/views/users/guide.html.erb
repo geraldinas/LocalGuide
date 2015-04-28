@@ -2,7 +2,7 @@
   <h1> <%=@guide.name%>'s Profile</h1>
   <legend>Personal Info:</legend> 
   
-  <img src="<%= @guide.image_url %>" height="72" weight="72">
+  <%=render 'avatar'%>
   <p><h4><%= @guide.name %></h4></p>
   <b>Location: </b><p><%= @guide.city.name %></p>
   <b>Email:    </b><%= @guide.email %><br></p>

@@ -4,15 +4,11 @@
 
       <center><h1> My Profile </h1>
       <legend>Personal information:</legend>
-      <%if current_user.avatar_url.nil?%>  
-        <img src="<%= current_user.image_url %>" height="100" weight="100">
-      <%else%>  
-        <%=image_tag current_user.avatar_url(:thumb)%>
-      <%end%>  
+      <%=render 'avatar'%>
       <p><h3><%= current_user.name %></h3></p>
       <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
       <b>Contact Me At: </b><h4><%= current_user.email %><br></p></h4>
-      <%= link_to "Edit", edit_user_path(current_user)%>
+      <%= link_to "Edit Personal Info", edit_user_path(current_user)%>
     </div></center>
 
     <div class="col-md-9"> 
@@ -21,7 +17,7 @@
   <p><br><b>You are hosting the the following tour activities:</b><br></p>
   <% current_user.activities.each do |activity| %>
     <p><%= link_to(activity.name, activity_path(activity)) %></p>
-  <% end %>
+      <% end %>
   <%= link_to "Host a New Activity", new_activity_path, :class => "btn btn-info btn-sm"%><br>
   <p> ---------------------------------------------- </p><br>
  
@@ -44,16 +40,10 @@
     <%end%>
   <%= link_to "Add New Trip", new_trip_path, :class => "btn btn-info btn-sm"%>
   <p> --------------------------------------------- </p> <br>
-
-  <%= link_to "Add Availability", new_availability_path%>
-
-  Your Availability for Tours:<br>
-    <% current_user.availabilities.each do |avail|%>
-      <%= avail.day.name %>
-      <%= avail.start_time.strftime '%l:%M %P' %> -
-      <%= avail.end_time.strftime '%l:%M %P' %><br>
-      <%= link_to "Edit", edit_availability_path(avail)%>    
-    <%end%>
+  
+  <%=render 'availability'%>
+  <%= link_to "Add Availability", new_availability_path%><br>
   </div>
  </div>
-</body></center>
+</body>
+</center>
