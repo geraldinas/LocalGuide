@@ -1,5 +1,5 @@
 us = Country.create(name: "USA")
-days = Day.create([{name: "Monday"},{name: "Tuesday"},{name: "Wednesday"},{name: "Thursday"}, {name: "Friday"}])
+days = Day.create([{name: "Monday"},{name: "Tuesday"},{name: "Wednesday"},{name: "Thursday"}, {name: "Friday"}, {name: "Saturday"}, {name: "Sunday"}])
 nyc = City.create(name: "NYC", country_id: us.id)
 bob = User.create(name: "Robert", nickname: "Bob", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "I love burgers and I'm free on Fridays.", city_id: nyc.id)
 louise = User.create(name: "Lola", nickname: "Louise", image_url: "http://media.treehugger.com/profiles/bio-2011-km.jpg.50x50_q70_crop-smart.jpg", description: "I love bunny ear hats and I'm free on thursdays.", city_id: nyc.id)
@@ -23,3 +23,15 @@ nyc_trip = Trip.create(tourist_id: linda.id, city_id: nyc.id, start_date: Date.t
 karaoke_tour = Tour.create(trip_id: nyc_trip.id, activity_id: karaoke.id, start_time: Date.today + 1, end_time: Date.today + 3)
 
 new_tour_booked = Notification.create(description: "Hi, I would like to book your tour", user: simone)
+
+
+
+
+
+
+
+
+
+
+
+

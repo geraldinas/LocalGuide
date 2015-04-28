@@ -13,4 +13,5 @@ class City < ActiveRecord::Base
     end
     container
   end
+
 end

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "/trips/:trip_id/guides/:id" => "users#guide", :as => :trip_guide
 
   get "/trips/:trip_id/guides/:guide_id/activities/:id" => "activities#show", :as => :guide_activity
+
+  get "/search" => "cities#index"
   
   #get "/guides/:guide_id/availabilities/:id" => "availabilities#new", :as => :guide_availability
   #http://localhost:3000/guides/:guide_id/availabilities/:availability_id
