@@ -1,5 +1,5 @@
 c= Country.create("name"=>"Germany")
-a =Country.create("name"=>"France")
+a=Country.create("name"=>"France")
 b= Country.create("name"=>"Belgium")
 d=Country.create("name"=>"Netherlands")
 
