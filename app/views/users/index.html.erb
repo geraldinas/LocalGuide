@@ -5,9 +5,8 @@
 		
     <%if user.avatar_url.nil?%>
     <b><%= link_to(image_tag(user.image_url),trip_guide_path(@trip, user)) %><br>
-    <%else%>	 
-         
-       <%= link_to(image_tag(user.avatar_url(:thumb)),trip_guide_path(@trip, user)) %><br>
+    <%else%>	      
+        <%= link_to(image_tag(user.avatar_url(:thumb)),trip_guide_path(@trip, user)) %><br>
     <%end%>   
 		
     	<%=user.description%><br></b>
