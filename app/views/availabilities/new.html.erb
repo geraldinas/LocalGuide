@@ -1,7 +1,19 @@
+<center><% if @availability.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@availability.errors.count, "error") %> 
+          prohibited this activity from being saved:</h2>
+    <ul>
+      <% @availability.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    </ul>
+  </div>
+<% end %></center>
+
 <center>HI this is your availabilities form please enter your available times:
 
 Add Availability: 
-<%=form_for Availability.new do |f|%><br>
+<%=form_for @availability do |f|%><br>
   <%= f.hidden_field :guide_id, value: current_user.id%>
   <%= f.label :day_id, "Select Day" %> 
   <%= f.collection_select :day_id, Day.all, :id, :name%>
@@ -9,6 +21,6 @@ Add Availability:
   <%= f.time_field :start_time %>
   <%= f.label :end_time %>
   <%= f.time_field :end_time %>
-  <%= f.submit "Add Availability"%>
+  <%= f.submit "Edit"%>
 <%end%>
 </center>

@@ -16,7 +16,11 @@ class AvailabilitiesController < ApplicationController
 
   def create
     @availability = Availability.create(availability_params)
-    redirect_to '/profile'
+    if @availability.save
+      redirect_to '/profile'
+    else
+      render :new
+    end
   end
 
   def show
