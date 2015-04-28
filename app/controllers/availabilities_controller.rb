@@ -27,6 +27,12 @@ class AvailabilitiesController < ApplicationController
     @availability = Availability.find(params[:id])
   end
 
+  def destroy
+    @availability = Availability.find(params[:id])
+    @availability.destroy
+    redirect_to '/profile'
+  end
+
 private
   def availability_params
     params.require(:availability).permit(:start_time, :end_time, :guide_id, :day_id)
