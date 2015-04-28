@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 ruby "2.2.0"
+gem 'fabrication'
+gem "rmagick"
 gem 'local_time'
 gem 'carrierwave'
 gem 'geocoder'

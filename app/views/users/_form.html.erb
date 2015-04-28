@@ -4,6 +4,7 @@
   <%= f.collection_select :city_id, City.all, :id, :name %><br><br>
   <%= f.label :email, "Enter Email" %>
   <%= f.text_field :email %>
+  <%= f.file_field :avatar %>
   <%= f.submit "Update Profile" %>
 <% end %>
 </center>
