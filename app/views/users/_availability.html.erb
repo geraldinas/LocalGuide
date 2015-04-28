@@ -4,6 +4,7 @@ Availability for Tours:<br>
   <%= avail.start_time.strftime '%l:%M %P' %> -
   <%= avail.end_time.strftime '%l:%M %P' %>
   <%if current_user%>
-    <%= link_to "Edit", edit_availability_path(avail)%><br>    
+    <%= link_to "Edit", edit_availability_path(avail)%> |
+    <%= link_to 'Destroy', availability_path(avail), :method => :delete %> <br>
   <%end%>
-<%end%>
+<%end%><br>

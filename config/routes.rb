@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get "/search" => "cities#index"
 
+  get "/guides/:id" => "users#guide_profile", :as => :guide
+
   
   resources :activities, :only => [:create, :new, :show, :update, :edit, :destroy]
 
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:edit, :update, :show]
   
-  resources :availabilities, :only => [:new, :create, :show, :edit, :update] 
+  resources :availabilities, :only => [:new, :create, :show, :edit, :update, :destroy] 
 
   resources :trips, :only => [:new, :show, :create, :index, :destroy, :update, :edit] 
 

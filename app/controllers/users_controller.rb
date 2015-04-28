@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     @users = @trip.city.users_with_activities
   end
 
+  def guide_profile
+    @guide = User.find(params[:id])
+    render "guide"
+  end
+
   def guide
     @trip = Trip.find(params[:trip_id])
     @guide = User.find(params[:id])
