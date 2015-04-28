@@ -13,9 +13,7 @@ Rails.application.routes.draw do
   get "/trips/:trip_id/guides/:guide_id/activities/:id" => "activities#show", :as => :guide_activity
 
   get "/search" => "cities#index"
-  
-  #get "/guides/:guide_id/availabilities/:id" => "availabilities#new", :as => :guide_availability
-  #http://localhost:3000/guides/:guide_id/availabilities/:availability_id
+
   
   resources :activities, :only => [:create, :new, :show, :update, :edit, :destroy]
 
@@ -32,4 +30,6 @@ Rails.application.routes.draw do
   resources :locations, :only => [:index, :create, :new]
 
   resources :tours, :only => [:create, :update]
+
+  # resources :cities, :only => [:index]
 end

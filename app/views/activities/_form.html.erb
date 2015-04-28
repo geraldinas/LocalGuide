@@ -1,5 +1,5 @@
 <center>
-  <%=form_for @activity do |f| %>
+  <%=form_for @activity, :html => {:multipart => true} do |f| %>
     <%= f.hidden_field :guide_id, :value => current_user.id%>
     <%= f.label :name%><br />
     <%= f.text_field :name%><br>
@@ -11,7 +11,9 @@
     <%= link_to_add_fields "Add Location", f, :locations%>
 
     <div class='actions'>
-      <%= f.submit "submit" %>
+      <%= f.file_field :avatar %>
     </div>
+    
+    <%= f.submit "submit" %>
   <% end %>  
 </center>

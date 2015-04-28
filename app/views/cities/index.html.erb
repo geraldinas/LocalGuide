@@ -1,13 +1,13 @@
 <center>
 <h1>Showing Guides in:</h1>
-	<%@guides.each do |guide|%>
-		<h2><%= link_to(guide.name, user_path(guide)) %>
-		<b><%= image_tag(guide.image_url) %><br>	
-			<%=guide.description%><br></b>
-	
-			<%guide.activities.each do |activity|%>
-			<h4><%=activity.name%><br></h4>
-      
-	<%end%>	
+<%@guides.each do |guide|%>
+<h2><%= link_to(guide.name, user_path(guide)) %>
+<b><%= image_tag(guide.image_url) %><br>
+<%=guide.description%><br></b>
+
+<%guide.activities.each do |activity|%>
+<h4><%=activity.name%><br></h4>
+
+<%end%>
 <%end%>
 </center>
