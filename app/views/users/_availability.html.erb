@@ -3,5 +3,7 @@ Availability for Tours:<br>
   <%= avail.day.name %>
   <%= avail.start_time.strftime '%l:%M %P' %> -
   <%= avail.end_time.strftime '%l:%M %P' %>
-  <%= link_to "Edit", edit_availability_path(avail)%><br>    
+  <%if current_user%>
+    <%= link_to "Edit", edit_availability_path(avail)%><br>    
+  <%end%>
 <%end%>
