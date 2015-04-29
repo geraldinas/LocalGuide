@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-c= Country.create("name"=>"Germany")
-a=Country.create("name"=>"France")
-=======
-
-c= Country.create("name"=>"Germany")
-a=Country.create("name"=>"France")
-
-c= Country.create("name"=>"Germany")
 a =Country.create("name"=>"France")
->>>>>>> steph
 b= Country.create("name"=>"Belgium")
+c= Country.create("name"=>"Germany")
 d=Country.create("name"=>"Netherlands")
 
 us = Country.create(name: "USA")
@@ -265,8 +256,8 @@ tours = Tour.create(
   ]
 )
 
-new_tour_booked = Notification.create(
-  [
-    {description: "Hi, I would like to book your tour", user: User.all.sample.name}
-  ]
-  )
+#new_tour_booked = Notification.create(
+  # [
+  #   {description: "Hi, I would like to book your tour", user: User.all.sample.name}
+  # ]
+  # )

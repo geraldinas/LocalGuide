@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   resources :ratings, :only => [:show, :index, :create, :update]
 
   resources :users, :only => [:edit, :update, :show]
+
+  resources :users do
+    member { post  :vote }
+  end
   
   resources :availabilities, :only => [:new, :create, :show, :edit, :update, :destroy] 
 

@@ -7,8 +7,16 @@
       <%=image_tag @guide.avatar_url(:thumb)%>
     <%end%>
     <p><h4><%= @guide.name %></h4></p>
-    <b>Location: </b><p><%= @guide.city.name %></p>
-    <b>Email:    </b><%= @guide.email %><br></p>
+    <p><b>Location: </b><p><%= @guide.city.name %></p>
+    <p><b>Email:    </b><%= @guide.email %><br></p>
+    <p><b>Votes:    </b>PENDING<%#= @guide. %><br></p>
+    <p>
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
+    </p>
+      <%= link_to "up", vote_user_path(@guide, type: "up"), method: "post" %>
+    | <%= link_to "down", vote_user_path(@guide, type: "down"), method: "post" %>
 
 <% if @trip %>
     <br><b>All activities <%=@guide.name%> is Hosting:</br>
