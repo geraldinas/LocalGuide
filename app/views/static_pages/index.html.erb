@@ -3,22 +3,13 @@
     <%= flash[:notice] %>  
   <% end %>
 
-  <nav class="navbar navbar-inverse navbar-fixed-top" style ='background-color: #99CCCC;'>
-      <a class="navbar-brand" href="/" style = "font-family:Courier New;color:#333366">
-        <b>Local Guide</b>
-      </a>
-  </nav>
-
   <video autoplay  poster="http://bit.ly/1HUHkcF" id="bgvid" loop>
   <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
 <source src="http://bit.ly/1HUHkcF" type="video/webm">
 <source src="//bit.ly/1HUHkcF" type="video/mp4">
 </video>
 
-  <h1>Welcome to Local Guide!</h1><br>
-      <% if current_user == nil %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "btn btn-info btn-sm"%>
-      <% end %>
+  <h1>Welcome to GuideMe!</h1><br>
 
   <p>
     <%= form_tag(search_path, :method => "get", class: "navbar-form", id: "search-form") do %>
@@ -26,5 +17,11 @@
     <%= submit_tag "Search", :name => nil %>
     <% end %>
   </p>
+
+  <% if current_user == nil %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "label label-primary"%>
+  <% end %><br>
+
+
 
 </center>
