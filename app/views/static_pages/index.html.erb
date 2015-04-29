@@ -17,14 +17,10 @@
     <%= text_field_tag :search, params[:search], placeholder: "Search Places" %>
     <%= submit_tag "Search", :name => nil %>
     <% end %>
-    </form>
-  </form> 
+  </form>
   </p>
 
   <% if current_user == nil %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "label label-primary"%>
   <% end %><br>
-
-
-
 </center>

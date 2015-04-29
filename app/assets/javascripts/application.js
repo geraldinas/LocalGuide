@@ -62,7 +62,7 @@ bgSlide = () ->
     space = (i + 1) * 45;
     $(this).css
       top: space
-      opacity: 1
+      opacity: 0
 
 textClose = () ->
   $('.profile-text').each (i) ->
