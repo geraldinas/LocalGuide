@@ -3,7 +3,10 @@
   <%= f.label :city_id, "Select your city" %>
   <%= f.collection_select :city_id, City.all, :id, :name %><br><br>
   <%= f.label :email, "Enter Email" %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email %><br>
+  
+  <%= f.label :description, "Enter a Short Bio" %><br>
+  <%= f.text_area :description %>
   <%= f.file_field :avatar %>
   <%= f.submit "Update Profile" %>
 <% end %>

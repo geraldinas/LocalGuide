@@ -10,9 +10,10 @@
     <%end%>   
 		
     	<%=user.description%><br></b>
-	
+	<h2> Activities Hosting </h2>
+
 			<%user.activities.each do |activity|%>
-			<h4><%=activity.name%><br></h4>
+			<ul><h4><%=activity.name%><br></h4></ul>
       
 	<%end%>	
 <%end%>
