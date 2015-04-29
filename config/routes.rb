@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
   get "/guides/:id" => "users#guide_profile", :as => :guide
 
-  
+  resources :reviews, :only => [:create]
+
   resources :activities, :only => [:create, :new, :show, :update, :edit, :destroy]
 
   resources :ratings, :only => [:show, :index, :create, :update]

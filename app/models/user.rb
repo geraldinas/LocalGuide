@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :tourist_activities, through: :tours, :source => :activity
   has_many :guides, through: :tourist_activities
   has_many :notifications
+  has_many :reviews
   mount_uploader :avatar, AvatarUploader
   delegate :country, to: :city 
   has_reputation :votes, 
