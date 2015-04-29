@@ -36,5 +36,7 @@ Rails.application.routes.draw do
 
   resources :tours, :only => [:create, :update]
 
+  resources :reviews, :only => [:create]
+
   # resources :cities, :only => [:index]
 end
