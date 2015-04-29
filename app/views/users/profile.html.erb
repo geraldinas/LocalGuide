@@ -19,6 +19,8 @@
     <p><%= link_to(activity.name, activity_path(activity)) %></p>
       <% end %>
   <%= link_to "Host a New Activity", new_activity_path, :class => "btn btn-info btn-sm"%><br>
+  
+
   <p> ---------------------------------------------- </p><br>
  
   <p><b>Upcoming Trips:</b></br>
@@ -39,6 +41,7 @@
       <%end%> 
     <%end%>
   <%= link_to "Add New Trip", new_trip_path, :class => "btn btn-info btn-sm"%>
+  <%= link_to "Add New Trip", new_trip_path, :class => "geraldina"%>
   <p> --------------------------------------------- </p> <br>
   
   <%=render 'availability'%>
