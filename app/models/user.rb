@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   has_many :notifications
   mount_uploader :avatar, AvatarUploader
   delegate :country, to: :city 
-  has_reputation :votes, source: :user, aggregated_by: :sum
+  has_reputation :votes, 
+        source: :user, aggregated_by: :sum
 
   def self.added_email_and_city?(params)
     return false if params[:email].length < 4

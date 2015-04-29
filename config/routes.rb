@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :ratings, :only => [:show, :index, :create, :update]
 
-  resources :users, :only => [:edit, :update, :show]
+  resources :users
 
   resources :users do
     member { post  :vote }
