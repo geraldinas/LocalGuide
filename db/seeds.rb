@@ -1,5 +1,9 @@
+
 c= Country.create("name"=>"Germany")
 a=Country.create("name"=>"France")
+
+c= Country.create("name"=>"Germany")
+a =Country.create("name"=>"France")
 b= Country.create("name"=>"Belgium")
 d=Country.create("name"=>"Netherlands")
 
@@ -34,9 +38,6 @@ nyc_trip = Trip.create(tourist_id: linda.id, city_id: nyc.id, start_date: Date.t
 karaoke_tour = Tour.create(trip_id: nyc_trip.id, activity_id: karaoke.id, start_time: Date.today + 1, end_time: Date.today + 3)
 
 new_tour_booked = Notification.create(description: "Hi, I would like to book your tour", user: simone)
-
-
-
 
 
 
