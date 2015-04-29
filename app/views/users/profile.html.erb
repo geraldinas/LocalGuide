@@ -43,6 +43,13 @@
   
   <%=render 'availability'%>
   <%= link_to "Add Availability", new_availability_path%><br>
+
+  Current Votes!
+  <%= current_user.reputation_for(:votes).to_i %>
+
+
+
+
   </div>
  </div>
 </body>

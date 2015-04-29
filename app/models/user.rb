@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :tourist_activities, through: :tours, :source => :activity
   has_many :guides, through: :tourist_activities
   has_many :notifications
+  has_many :reviews, foreign_key: "guide_id"
+  has_many :written_reviews, foreign_key: "reviewer_id"
   mount_uploader :avatar, AvatarUploader
   delegate :country, to: :city 
   has_reputation :votes, source: :user, aggregated_by: :sum
