@@ -1,16 +1,16 @@
-  <center>
-    <h1> <%=@guide.name%>'s Profile</h1>
-    <legend>Personal Info:</legend> 
+<center>
+  <h1 class="profile-name"> <%=@guide.name%></h1>  
+    <div class="profile-bio">
     <% if @guide.avatar_url.nil?%>
       <img src="<%= @guide.image_url %>" height="72" weight="72">
     <%else%>
       <%=image_tag @guide.avatar_url(:thumb)%>
-    <%end%>
-    <p><h4><%= @guide.name %></h4></p>
+    <%end%><br>
+    
     <b>Location: </b><p><%= @guide.city.name %></p>
     <b>Email:    </b><%= @guide.email %><br></p>
 
-<% if @trip %>
+    <% if @trip %>
     <br><b>All activities <%=@guide.name%> is Hosting:</br>
         <% @guide.activities.each do |activity| %>
           <%= link_to(activity.name, guide_activity_path(@trip,@guide,activity)) %>
@@ -19,43 +19,10 @@
           <%= f.hidden_field :trip_id, value: @trip.id%>
         <%end%>
       <% end %>      
-
-<% else %>
+  <% else %>
     <br><b>All activities <%=@guide.name%> is Hosting:</br>
       <% @guide.activities.each do |activity| %>
         <%= activity.name %>
       <% end %>  
-<% end %>
-  </center>
-
-
-
-
-  <div class="profile-container" data-profile-text="white" data-profile-bg="sea">
-  <div class="profile-changer">
-    <div class="profile-changer-trigger">
-      <span class="ion-waterdrop"></span>
-    </div>
-    <div class="profile-changer-holder">
-      <div class="profile-changer-texts">
-        <div class="profile-text profile-text-black">t</div>
-        <div class="profile-text profile-text-white">t</div>
-      </div>
-      <div class="profile-changer-bgs">
-        <div class="profile-bg profile-bg-sea"><span class="ion-paintbucket"></span></div>
-        <div class="profile-bg profile-bg-sunset"><span class="ion-paintbucket"></span></div>
-        <div class="profile-bg profile-bg-royale"><span class="ion-paintbucket"></span></div>
-      </div>
-    </div>
-  </div>
-  <div class="profile">
-    <img class="profile-avatar" src="//s3-us-west-2.amazonaws.com/s.cdpn.io/33381/profile/profile-512_1.jpg" alt="User Avatar of Michael Lee">
-    <div class="profile-names">
-      <h1 class="profile-name">Michael Lee</h1>
-      <div class="profile-handle">@michaellee</div>
-    </div>
-    <div class="profile-bio">
-      I like eating pizza and writing code.<br>On the weekends I like taking my pet turtle out for walks.
-    </div>
-  </div>
-</div>
+  <% end %>
+</center>
