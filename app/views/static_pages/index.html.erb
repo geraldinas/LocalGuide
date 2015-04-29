@@ -10,12 +10,15 @@
 </video>
 
   <h1>Welcome to GuideMe!</h1><br>
-
+  <h3>Connect with locals during your trips</h3>
   <p>
-    <%= form_tag(search_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+    <%= form_tag(search_path, :method => "get", class: "navbar-form") do %>
+  <form id="searchbox" action=""> 
     <%= text_field_tag :search, params[:search], placeholder: "Search Places" %>
     <%= submit_tag "Search", :name => nil %>
     <% end %>
+    </form>
+  </form> 
   </p>
 
   <% if current_user == nil %>
