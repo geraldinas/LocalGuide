@@ -15,6 +15,7 @@
         <%= flash[:notice] %>
       <% end %>
     </p>
+      <%= pluralize @guide.reputation_for(:votes).to_i, "vote" %>
       <%= link_to "up", vote_user_path(@guide, type: "up"), method: "post" %>
     | <%= link_to "down", vote_user_path(@guide, type: "down"), method: "post" %>
 
@@ -27,7 +28,6 @@
           <%= f.hidden_field :trip_id, value: @trip.id%>
         <%end%>
       <% end %>      
-
 <% else %>
     <br><b>All activities <%=@guide.name%> is Hosting:</br>
       <% @guide.activities.each do |activity| %>

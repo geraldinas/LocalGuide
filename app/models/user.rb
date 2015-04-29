@@ -27,7 +27,17 @@ class User < ActiveRecord::Base
       user.image_url = auth["info"]["image"]
       user.description = auth["info"]["description"]
     end
-  end  
+  end
+
+  # def self.by_votes
+  #   select('users.*, coalesce(value, 0) as votes').
+  #   joins('left join user_votes on user_id=user.id').
+  #   order('votes desc')
+  # end
+
+  def voted_for(user)
+    evaluations.where(target_type: user.class, target_id: users.id).present?
+  end
 
   def accepted_led_tours
     find_led_tours_by_status("accepted")

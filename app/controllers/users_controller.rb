@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   
   def index
-    @trip = Trip.find(params[:id])
+    @trip  = Trip.find(params[:id])
     @users = @trip.city.users_with_activities
+    @users = User.find_with_reputation(:votes, :all, order: "votes desc")
   end
 
   def guide_profile
@@ -41,9 +42,11 @@ class UsersController < ApplicationController
   def vote
     value = params[:type] == "up" ? 1 : -1
     @user = User.find(params[:id])
-    @user.add_evaluation(:votes, value, current_user)
+    @user.add_or_update_evaluation(:votes, value, current_user)
     redirect_to :back, notice: "Thank you for voting!"
   end
+
+
   
   private
   def user_params
