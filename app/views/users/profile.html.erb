@@ -1,14 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4"><center>
     <!-- <center><h1> My Profile </h1>
     <legend>Personal information:</legend></center> -->
-      <p><%=render 'avatar'%></p>
+      <p><%=render 'avatar'%></p></center>
     </div>
     <div class="col-md-8">
       <p><h1><%= current_user.name %></h1></p>
-      <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
-      <b>Contact Me At: </b><h4><%= current_user.email %><br></h4></b>
+      <p><b>Residence: </b><h4><b><%= current_user.city.name %></b></h4></p>
+      <p><b>Contact Me At: </b></p><h4><p><b><%= current_user.email %><br></h4></b>
+      <p><b> Bio: </b></p><h4><p><b><%= current_user.description %><br></h4></p></b>
       <p><b>Current Votes:
       <%= current_user.reputation_for(:votes).to_i %></b></p>
       <%= link_to "Edit Personal Info", edit_user_path(current_user)%>
@@ -17,7 +18,7 @@
 </div>
  
   
-  <br><br><br><br><br><br>
+  <br><br><br><br><br>
 
 
 
