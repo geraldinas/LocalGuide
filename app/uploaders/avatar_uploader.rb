@@ -5,7 +5,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   
    include CarrierWave::RMagick
   
-  include CarrierWave::MineTypes
   process :set_content_type 
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -15,7 +14,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
-  
+
   version :thumb do
    process :resize_to_limit => [400, 500]
   end

@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   
   def index
     @trip  = Trip.find(params[:id])
-    @uploader = Avatar.new
-    @uploader.success_action_redirect = 'profile'
     @users = @trip.city.users_with_activities
     @users = User.find_with_reputation(:votes, :all, order: "votes desc")
   end
@@ -27,6 +25,8 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
+    @uploader = @user.avatar
+    @uploader.success_action_redirect = 'profile'
   end  
   
   def update
