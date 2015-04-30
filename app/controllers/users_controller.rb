@@ -30,7 +30,8 @@ class UsersController < ApplicationController
   def upload_success
     @user = User.find(params[:id])
     @user.key = params[:key]
-    @user.remote_avatar_url = @user.avatar.direct_fog_url(with_path: true)
+    # binding.pry
+    # @user.remote_avatar_url = @user.avatar.direct_fog_url(with_path: true)
     @user.save!
     redirect_to "/profile"
   end
@@ -61,8 +62,6 @@ class UsersController < ApplicationController
     @user.add_or_update_evaluation(:votes, value, current_user)
     redirect_to :back, notice: "Thank you for voting!"
   end
-
-
   
   private
   def user_params
