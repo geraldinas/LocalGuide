@@ -9,6 +9,8 @@
       <p><h1><%= current_user.name %></h1></p>
       <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
       <b>Contact Me At: </b><h4><%= current_user.email %><br></h4></b>
+      <p><b>Current Votes:
+      <%= current_user.reputation_for(:votes).to_i %></b></p>
       <%= link_to "Edit Personal Info", edit_user_path(current_user)%>
     </div>
   </div>
@@ -57,7 +59,5 @@
     </div>
     </center>
 
-  Current Votes!
-  <%= current_user.reputation_for(:votes).to_i %>
   </div>
 </div>
