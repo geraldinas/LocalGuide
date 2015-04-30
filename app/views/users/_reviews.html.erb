@@ -1,6 +1,7 @@
 <%= form_for Review.new do |f| %>
 	<%= f.hidden_field :guide_id, :value => @guide.id %>
 	<%= f.hidden_field :reviewer_id, :value => current_user.id %>
-	<%= f.label      :content, "Review this guide!" %>
-	<%= f.submit %>
+	<h4><b><%= f.label      :content, "Write a Review!" %></b></h4>
+  <%= f.text_field :content %>
+	<%= f.submit "Submit"  %>
 <% end %>
