@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :notifications
   has_many :reviews, foreign_key: "guide_id"
   has_many :written_reviews, foreign_key: "reviewer_id"
-  validates :description, presence: :true
+  # validates :description, presence: :true
   mount_uploader :avatar, AvatarUploader
   delegate :country, to: :city 
   has_reputation :votes, 
