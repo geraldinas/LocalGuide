@@ -1,28 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
     <!-- <center><h1> My Profile </h1>
     <legend>Personal information:</legend></center> -->
-      <%=render 'avatar'%>
+      <p><%=render 'avatar'%></p>
     </div>
-    <div class="col-md-8"><center>
-      <p><h3><%= current_user.name %></h3></p>
+    <div class="col-md-8">
+      <p><h1><%= current_user.name %></h1></p>
       <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
       <b>Contact Me At: </b><h4><%= current_user.email %><br></h4></b>
-      <%= link_to "Edit Personal Info", edit_user_path(current_user)%></p></h4></center>
+      <%= link_to "Edit Personal Info", edit_user_path(current_user)%>
     </div>
   </div>
+</div>
  
   
-  
+  <br><br><br><br>
 
 
 
 
-<br><br><br><br>
-
-
-
+<div class="container">
+  <div class="row">
   <p><b>You are hosting the the following tour activities:</b><br></p>
   <% current_user.activities.each do |activity| %>
     <p><%= link_to(activity.name, activity_path(activity)) %></p>
@@ -57,5 +56,5 @@
 
   Current Votes!
   <%= current_user.reputation_for(:votes).to_i %>
-  
+  </div>
 </div>
