@@ -1,27 +1,38 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3"> 
-
-      <center><h1> My Profile </h1>
-      <legend>Personal information:</legend>
+    <div class="col-md-3">
+    <!-- <center><h1> My Profile </h1>
+    <legend>Personal information:</legend></center> -->
       <%=render 'avatar'%>
+    </div>
+    <div class="col-md-8"><center>
       <p><h3><%= current_user.name %></h3></p>
       <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
-      <b>Contact Me At: </b><h4><%= current_user.email %><br></p></h4>
-      <%= link_to "Edit Personal Info", edit_user_path(current_user)%>
-    </div></center>
+      <b>Contact Me At: </b><h4><%= current_user.email %><br></h4></b>
+      <%= link_to "Edit Personal Info", edit_user_path(current_user)%></p></h4></center>
+    </div>
+  </div>
+ 
+  
+  
 
-    <div class="col-md-9"> 
-  <center>
 
-  <p><br><b>You are hosting the the following tour activities:</b><br></p>
+
+
+<br><br><br><br>
+
+
+
+  <p><b>You are hosting the the following tour activities:</b><br></p>
   <% current_user.activities.each do |activity| %>
     <p><%= link_to(activity.name, activity_path(activity)) %></p>
       <% end %>
+  
   <%= link_to "Host a New Activity", new_activity_path, :class => "geraldina" %><br><br>
   
  
-  <p><b>Upcoming Trips:</b></br>
+
+  <p><b>Upcoming Trips:</b></br></p>
     <%if current_user.trips.empty? %>
     <%="No Upcoming Trips"%>
     <%else%>   
@@ -30,7 +41,7 @@
           <p><%= link_to(trip.city.name, trip_path(trip))%></p>
         <%end%>   
       <%end%>
-    <%end%>   
+    <%end%>
 
   <b>Past Trips:</b></br>
     <% current_user.trips.each do |trip|%>
@@ -38,16 +49,13 @@
         <p><%= link_to(trip.city.name, trip_path(trip)) %></p>
       <%end%> 
     <%end%>
-  
-  <%= link_to "Add New Trip", new_trip_path, :class => "geraldina"%><br><br><br>
-  
+  <%= link_to "Add New Trip", new_trip_path, :class => "geraldina"%>
+
   <%=render 'availability'%>
-  <%= link_to "Add Availability", new_availability_path, :class => "geraldina"%><br>
+  <%= link_to "Add Availability", new_availability_path, :class => "geraldina"%>
+
 
   Current Votes!
   <%= current_user.reputation_for(:votes).to_i %>
-
-  </div>
- </div>
-</body>
-</center>
+  
+</div>
