@@ -18,13 +18,11 @@
   </form>
   </p>
 
-  <% if current_user == nil %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "label label-primary"%>
-  <% end %><br>
-
       <div class="container">
         <h1>GuideMe</h1>
         <p>A free app that conects you with locals when you are traveling. Share the experiences that only a local would know about!</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign in with Facebook &raquo;</a></p>
+        <% if current_user == nil %>
+          <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "label label-primary", class:"btn btn-primary btn-lg" %>
+        <% end %><br>
     </div>
 </center>
