@@ -1,17 +1,17 @@
 <div class="background-color">
 <div class="container">
   <div class="row">
-    <div class="col-md-4"><center><br><br><br>
+    <div class="col-md-4"><center><br><br>
       <p><%=render 'avatar'%></p></center>
-      <h3>Change Avatar</h3>
+      <center><h3>Change Avatar</h3>
 
       <%= direct_upload_form_for @uploader do |f| %>
         <%= f.file_field :avatar %>
         <%= f.submit "Upload Image" %>
-      <% end%>
+      <% end%></center>
 
     </div>
-    <div class="col-md-8"><br><br><br>
+    <div class="col-md-8"><br><br>
       <p><h1><%= current_user.name %></h1></p>
       <p><b>Residence: </b><h4><b><%= current_user.city.name %></b></h4></p>
       <p><b>Contact Me At: </b></p><h4><p><b><%= current_user.email %><br></h4></b>
@@ -23,7 +23,7 @@
   </div>
 </div>
  
-  <br><br><br><br><br>
+  <br><br><br><br>
 
 <div class="container"><center>
   <div class="row">
