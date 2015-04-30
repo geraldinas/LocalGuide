@@ -1,5 +1,5 @@
-<br>
-<b>Availability for Tours:</b><br>
+
+<h4><b>Availability for Tours:</b></h4>
 <% current_user.availabilities.each do |avail|%>
   <%= avail.day.name %>
   <%= avail.start_time.strftime '%l:%M %P' %> -

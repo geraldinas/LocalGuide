@@ -1,19 +1,39 @@
-<center>
-  <h1> <%=@user.name%>'s Profile</h1>
-  <legend>General Info:</legend>
-      
-  <%=render 'avatar'%>
-  <p><h4><%= @user.name %></h4></p>
-  <b>Residence: </b><h4><p><b><%= current_user.city.name %></p></h4>
-  <b>Contact Me At: </b><h4><%= current_user.email %><br></p></h4>
+<div class="container">
+  <div class="row"><center>
+      <legend><h1> <%=@user.name%></h1></legend></center>
+  </div>
+</div>
 
-
-  <h4><b>All activities <%=@user.name%> is Hosting:</b><br></h4>
-  <% @user.activities.each do |activity| %>
-      <p><%= link_to(activity.name, activity_path(activity)) %></p>
-  <% end %>
-
-  Availability for Tours:<br>
-    <%=render 'availability'%>
+<div class="container">     
+  <div class="row">
+    <div class="col-md-5"><center>
+      <p><%=render 'avatar'%></p></center>
     </div>
-</center>
+
+    <div class="col-md-7">
+      <h4><p><b> Resident of <%= current_user.city.name %></b></p></h4><br>
+      <h4><p>Contact Info:</p></h4> <h4><p><b> <%= current_user.email %></h4></b></p>
+      <h4><p> About: </p></h4> <h4><p><b> <%= current_user.description %></h4></b></p>
+    </div>
+  </div>
+</div>
+
+<br><br><br>
+
+<div class="container">
+  <div class="row"><center>
+    <div class="col-md-6"><br>
+      <h4><b>Activities hosted by <%=@user.name%>:</b></h4>
+      <% @user.activities.each do |activity| %>
+          <p><%= link_to(activity.name, activity_path(activity)) %></p>
+      <% end %>
+    </div>
+
+    <div class="col-md-6">
+      <p><%=render 'availability'%></p>
+    </div>
+  </div></center>
+
+  
+
+</div>
