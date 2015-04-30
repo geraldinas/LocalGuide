@@ -1,16 +1,14 @@
+
 <center>
 <%=form_for @user do |f| %><br>
   <%= f.label :city_id, "Select your city" %>
   <%= f.collection_select :city_id, City.all, :id, :name %><br><br>
   <%= f.label :email, "Enter Email" %>
-  <%= f.text_field :email %><br>
-  
+  <%= f.text_field :email %><br>  
+  <%#= f.submit "Upload Image" %>
   <%= f.label :description, "Enter a Short Bio" %><br>
   <%= f.text_area :description %>
   <%= f.submit "Update Profile" %>
 <% end %>
-<%= direct_upload_form_for @uploader do |f|%>
-  <%= f.file_field :avatar %>
-  <%= f.submit "Upload Image" %>
-  <% end%>
+
 </center>
