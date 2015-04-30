@@ -1,47 +1,71 @@
-<center>
-  <h1 class="profile-name"> <%=@guide.name%></h1>  
-    <div class="profile-bio">
-    <% if @guide.avatar_url.nil?%>
-      <img src="<%= @guide.image_url %>" height="72" weight="72">
-    <%else%>
-      <%=image_tag @guide.avatar_url(:thumb)%>
-    <%end%>
-    <p><h4><%= @guide.name %></h4></p>
-    <p><b>Location: </b><p><%= @guide.city.name %></p>
-    <p><b>Email:    </b><%= @guide.email %><br></p>
-    <p>
-      <% if flash[:notice] %>
-        <%= flash[:notice] %>
-      <% end %>
-    </p>
-    <%= render 'votes'%>
-    <b>Location:</b>
-      <p><%= @guide.city.name %></p>
-    <b>Email:</b>
-      </p><%= @guide.email %><br></p>
+<div class="container">
+  <div class="row"><center>
+      <legend><h1 class="profile-name"> <%=@guide.name%></h1></legend></center>
+  </div>
+</div>
 
-    <% if @trip %>
-      <br>
-      <b>
-      All activities <%=@guide.name%> is Hosting:</br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="profile-bio"><center>
+        <% if @guide.avatar_url.nil?%>
+          <img class='img-circle' src="<%= @guide.image_url %>" height="200" width="200"></center>
+        <%else%>
+          <%=image_tag @guide.avatar_url(:thumb)%>
+        <%end%>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <p><h4><%= @guide.name %></h4></p>
+      <p><b>Location: </b><p><%= @guide.city.name %></p>
+      <p><b>Email:    </b><%= @guide.email %><br></p>
+      <p><b> About: </b><p><%= @guide.description %></p></p></p>
+    
+      <p>
+        <% if flash[:notice] %>
+          <%= flash[:notice] %>
+        <% end %>
+      </p>
+      <%= render 'votes'%>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<div class="container">
+  <div class="row"><center>
+    <div class="col-md-3">
+      <% if @trip %>
+        <br><h4><b>Activities hosted by <%=@guide.name%>: </b></h4>
         <% @guide.activities.each do |activity| %>
           <%= link_to(activity.name, guide_activity_path(@trip,@guide,activity)) %>
         <%=form_for Tour.new do |f|%>
           <%= f.hidden_field :activity_id, value: activity.id%>
           <%= f.hidden_field :trip_id, value: @trip.id%>
-        <%end%>
+      <%end%>
       <% end %>    
-    <% else %>
-    <br><b>All activities <%=@guide.name%> is Hosting:</br>
-      <% @guide.activities.each do |activity| %>
-        <%= activity.name %>
-      <% end %>  
-    <% end %>
-    
-    <%= render 'reviews' %>
-    <% @guide.reviews.each do |review| %>
-        <%= review.content %>
+      <% else %><br>
+        <b><h4>Activities hosted by <%=@guide.name%>: </h4></b>
+        <% @guide.activities.each do |activity| %>
+          <%= activity.name %>
+        <% end %>  
+      <% end %>
+    </div>
+
+    <div class="col-md-5"><br>
+      <%= render 'reviews' %><br>
+      <% @guide.reviews.each do |review| %>
+        <p><%= review.content %></p>
       <% end %> 
+    </div>
+
+    <div class="col-md-4"><br>
+      <p><%=render 'availability'%></p>
+    </div>
+  </div></center>
+</div>
+
 
 
 
