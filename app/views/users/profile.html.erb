@@ -15,44 +15,47 @@
 </div>
  
   
-  <br><br><br><br>
+  <br><br><br><br><br><br>
 
 
 
 
-<div class="container">
+<div class="container"><center>
   <div class="row">
-  <p><b>You are hosting the the following tour activities:</b><br></p>
-  <% current_user.activities.each do |activity| %>
-    <p><%= link_to(activity.name, activity_path(activity)) %></p>
-      <% end %>
-  
-  <%= link_to "Host a New Activity", new_activity_path, :class => "geraldina" %><br><br>
-  
- 
-
-  <p><b>Upcoming Trips:</b></br></p>
-    <%if current_user.trips.empty? %>
-    <%="No Upcoming Trips"%>
-    <%else%>   
-      <% current_user.trips.each do |trip|%>
-        <% if trip.start_date > Date.today%>
-          <p><%= link_to(trip.city.name, trip_path(trip))%></p>
-        <%end%>   
+    <div class="col-md-3">
+      <%= link_to "New Activity", new_activity_path, :class => "geraldina" %><br><br>
+      <p><b>You are hosting the the following tour activities:</b><br></p>
+      <% current_user.activities.each do |activity| %>
+        <p><%= link_to(activity.name, activity_path(activity)) %></p>
+          <% end %>
+    </div>
+      
+    <div class="col-md-5"><center>
+      <%= link_to "Add New Trip", new_trip_path, :class => "geraldina"%></p>
+      <p><b>Upcoming Trips:</b></br>
+      <%if current_user.trips.empty? %>
+        <%="No Upcoming Trips"%>
+      <%else%>   
+        <% current_user.trips.each do |trip|%>
+          <% if trip.start_date > Date.today%>
+            <p><%= link_to(trip.city.name, trip_path(trip))%></p>
+          <%end%>   
+        <%end%>
       <%end%>
-    <%end%>
 
-  <b>Past Trips:</b></br>
-    <% current_user.trips.each do |trip|%>
-      <% if trip.start_date < Date.today%>
-        <p><%= link_to(trip.city.name, trip_path(trip)) %></p>
-      <%end%> 
-    <%end%>
-  <%= link_to "Add New Trip", new_trip_path, :class => "geraldina"%>
-
-  <%=render 'availability'%>
-  <%= link_to "Add Availability", new_availability_path, :class => "geraldina"%>
-
+      <b>Past Trips:</b></br>
+      <% current_user.trips.each do |trip|%>
+        <% if trip.start_date < Date.today%>
+          <p><%= link_to(trip.city.name, trip_path(trip)) %></p>
+        <%end%> 
+      <%end%>
+    </div>
+    
+    <div class="col-md-4">
+      <%= link_to "Add Availability", new_availability_path, :class => "geraldina"%><br>
+      <p><%=render 'availability'%></p>
+    </div>
+    </center>
 
   Current Votes!
   <%= current_user.reputation_for(:votes).to_i %>
