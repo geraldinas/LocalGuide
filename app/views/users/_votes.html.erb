@@ -1,0 +1,3 @@
+<%= pluralize @guide.reputation_for(:votes).to_i, "vote" %>
+<%= link_to "up", vote_user_path(@guide, type: "up"), method: "post" %>
+| <%= link_to "down", vote_user_path(@guide, type: "down"), method: "post" %>

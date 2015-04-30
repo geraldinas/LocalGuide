@@ -1,4 +1,7 @@
-FactoryGirl.define do  factory :day do
+FactoryGirl.define do  factory :review do
+    
+  end
+  factory :day do
     name "MyString"
   end
   factory :availability do

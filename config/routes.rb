@@ -16,12 +16,11 @@ Rails.application.routes.draw do
 
   get "/guides/:id" => "users#guide_profile", :as => :guide
 
-  
+  resources :reviews, :only => [:create]
+
   resources :activities, :only => [:create, :new, :show, :update, :edit, :destroy]
 
   resources :ratings, :only => [:show, :index, :create, :update]
-
-  resources :users, :only => [:edit, :update, :show]
 
   resources :users do
     member { post  :vote }
@@ -36,6 +35,8 @@ Rails.application.routes.draw do
   resources :locations, :only => [:index, :create, :new]
 
   resources :tours, :only => [:create, :update]
+
+  resources :reviews, :only => [:create]
 
   # resources :cities, :only => [:index]
 end
