@@ -17,6 +17,22 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @user = current_user
+    @uploader = @user.avatar
+    @uploader.success_action_redirect = url_for(
+      :controller => 'users', 
+      :action => 'upload_success', 
+      :id => @user.id, 
+      :only_path => false
+    )
+  end
+
+  def upload_success
+    @user = User.find(params[:id])
+    @user.key = params[:key]
+    @user.remote_avatar_url = @user.avatar.direct_fog_url(with_path: true)
+    @user.save!
+    redirect_to "/profile"
   end
 
   def show
@@ -25,8 +41,6 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
-    @uploader = @user.avatar
-    @uploader.success_action_redirect = 'profile'
   end  
   
   def update

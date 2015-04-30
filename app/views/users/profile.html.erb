@@ -4,6 +4,13 @@
     <!-- <center><h1> My Profile </h1>
     <legend>Personal information:</legend></center> -->
       <p><%=render 'avatar'%></p></center>
+      <h3>Change Avatar</h3>
+
+      <%= direct_upload_form_for @uploader do |f| %>
+        <%= f.file_field :avatar %>
+        <%= f.submit "Upload Image" %>
+      <% end%>
+
     </div>
     <div class="col-md-8">
       <p><h1><%= current_user.name %></h1></p>

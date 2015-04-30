@@ -1,9 +1,14 @@
 # encoding: utf-8
 
 class AvatarUploader < CarrierWave::Uploader::Base
-   include CarrierWaveDirect::Uploader 
-  
-   include CarrierWave::RMagick
+  include CarrierWave::RMagick
+  include CarrierWave::MimeTypes
+  include CarrierWaveDirect::Uploader 
+  storage :fog
+
+  def store_dir
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
   
   process :set_content_type 
 

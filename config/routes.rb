@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/auth/facebook/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout  
 
+  get "/users/:id/upload-success" => "users#upload_success"
+  
   get "/trips/:id/guides" => "users#index", :as => :trip_guides
   get "/trips/:trip_id/guides/:id" => "users#guide", :as => :trip_guide
 
