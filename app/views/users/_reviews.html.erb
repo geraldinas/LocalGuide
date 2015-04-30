@@ -2,6 +2,5 @@
 	<%= f.hidden_field :guide_id, :value => @guide.id %>
 	<%= f.hidden_field :reviewer_id, :value => current_user.id %>
 	<%= f.label      :content, "Review this guide!" %>
-	<%= f.text_area  :content %>
 	<%= f.submit %>
 <% end %>
