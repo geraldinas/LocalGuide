@@ -25,6 +25,8 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
+    @uploader = @user.avatar
+    @uploader.success_action_redirect = 'profile'
   end  
   
   def update

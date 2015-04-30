@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 ruby "2.2.0"
-
+gem 'fog'
+gem 'carrierwave_direct'
+gem 'sidekiq'
 gem 'fabrication'
 gem "rmagick"
 gem 'local_time'
