@@ -1,11 +1,11 @@
 
-<h4><b>Availability for Tours:</b></h4>
+
 <% current_user.availabilities.each do |avail|%>
-  <%= avail.day.name %>
+  <h4><%= avail.day.name %>
   <%= avail.start_time.strftime '%l:%M %P' %> -
-  <%= avail.end_time.strftime '%l:%M %P' %>
+  <%= avail.end_time.strftime '%l:%M %P' %></h4>
   <%if current_user%>
-    <%= link_to "Edit", edit_availability_path(avail)%> |
-    <%= link_to 'Destroy', availability_path(avail), :method => :delete %> <br>
+    <%= link_to "Edit", edit_availability_path(avail), :class => "stephanie"%> 
+    <%= link_to 'Destroy', availability_path(avail), :method => :delete, :class => "stephanie"%> <br>
   <%end%>
 <%end%><br>

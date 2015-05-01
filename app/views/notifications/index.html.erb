@@ -1,23 +1,24 @@
+<br><br><br><br><br>
 <center>
-    <h2>Requested Tours</h2>
+    <h1><b>Tour Notifications</b></h1><br><br><br>
 
-      <b>Accepted Tours:</b><br>
+      <h4><b>Accepted Tours:</b></h4><br>
         <% current_user.accepted_led_tours.each do |tour| %>
           <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
           <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
           <ul><ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
           <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></ul></ul>
-        <%end%><br>
+        <%end%><br><br>
       
-      <b>Rejected Tours:</b><br>
+      <h4><b>Rejected Tours:</b></h4><br>
         <% current_user.rejected_led_tours.each do |tour| %><br>
           <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
           <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
           <ul><ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
           <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></li></ul>
-        <%end%><br>
+        <%end%><br><br>
       
-      <b>Pending Tours:<br></b>
+      <h4><b>Pending Tours:</b></h4><br>
 
         <% current_user.pending_led_tours.each do |tour| %><br>
           <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
