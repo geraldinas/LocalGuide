@@ -2,7 +2,7 @@
 <center><legend><h1>Activity: <%= @activity.name %></h1></legend></center>
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-6">
       <br><br><br><br><br><center>
         <h5>Description:</h5><h4> <%= @activity.description %></h4>
           <%=image_tag @activity.avatar_url(:thumb)%>
@@ -15,18 +15,18 @@
             <%=form_for Tour.new do |f|%>   
               <%= f.hidden_field :activity_id, value: @activity.id%>
               <%= f.hidden_field :trip_id, value: params[:trip_id]%>
-              <%= f.label :start_time %>
-              <%= f.datetime_select :start_time%><br>
-              <%= f.label :end_time %>
+              <center><%= f.label :start_time %></center>
+              <%= f.datetime_select :start_time%><br><br><br>
+              <center><%= f.label :end_time %></center>
               <%= f.datetime_select :end_time%><br><br>
-              <%= f.submit "Request Tour"%>
+              <%= f.submit "Request Tour", :class => "stephanie"%>
            <%end%>
         <%end%>
       </center>
     </div>
-    <div class="col-md-7"><br><br><br><br>
+    <div class="col-md-6"><br><br><br><br>
       <div style='width: 800px;'>
-        <div id="map" style='width: 700px; height: 400px'></div><br>
+        <div id="map" style='width: 700px; height: 400px;'></div><br>
       </div>
 
       <center><%= link_to "Edit", edit_activity_path(@activity), :class => "stephanie"%>
