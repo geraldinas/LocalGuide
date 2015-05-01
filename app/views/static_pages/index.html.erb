@@ -12,12 +12,12 @@
 
       <div class="container">
   <p>
-  <div class="guide_me" style="color:#FFFFFF">GuideMe</div><br><br><br><br><br><br>
+  <div class="guide_me" style="color:#FFFFFF">GuideMe</div><br><br>
 
     <%= form_tag(search_path, :method => "get", class: "navbar-form") do %>
   <form id="searchbox" action=""> 
     <%= text_field_tag :search, params[:search], placeholder: "Search Cities", class: "form-control"%>
-    <%= submit_tag "Search", :name => nil, class: "form-control", :class => "search_button"%><br><br><br><br><br>
+    <%= submit_tag "Search", :name => nil, class: "form-control", :class => "search_button"%><br>
     <% end %>
   </form>
   </p>
