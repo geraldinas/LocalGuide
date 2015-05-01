@@ -9,7 +9,11 @@
 <source src="//bit.ly/1HUHkcF" type="video/mp4">
 </video>
 
+
+      <div class="container">
+        <h1>GuideMe</h1><br><br><br><br><br><br><br><br><br><br><br>
   <p>
+  
     <%= form_tag(search_path, :method => "get", class: "navbar-form") do %>
   <form id="searchbox" action=""> 
     <%= text_field_tag :search, params[:search], placeholder: "Search Cities", class: "form-control"%>
@@ -17,9 +21,6 @@
     <% end %>
   </form>
   </p>
-
-      <div class="container">
-        <h1>GuideMe</h1>
         <p>A free app that conects you with locals when you are traveling. Share the experiences that only a local would know about!</p>
           <% if current_user == nil %>
             <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "label label-primary", class:"btn btn-primary btn-lg" %>
