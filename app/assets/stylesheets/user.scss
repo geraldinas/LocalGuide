@@ -235,6 +235,28 @@ a:hover {
   font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+.special {
+  background-color: hsl(7, 98%, 38%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#de1b02", endColorstr="#bf1801");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#de1b02), to(#bf1801));
+  background-image: -moz-linear-gradient(top, #de1b02, #bf1801);
+  background-image: -ms-linear-gradient(top, #de1b02, #bf1801);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #de1b02), color-stop(100%, #bf1801));
+  background-image: -webkit-linear-gradient(top, #de1b02, #bf1801);
+  background-image: -o-linear-gradient(top, #de1b02, #bf1801);
+  background-image: linear-gradient(#de1b02, #bf1801);
+  border-color: #bf1801 #bf1801 hsl(7, 98%, 36.5%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09);
+  -webkit-font-smoothing: antialiased;
+  padding: 4px 8px;
+  font-size: 8px;
+  color:#FFFFFF;
+  font-weight: 600;
+  font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
 img {
   display: block;
   height: auto;
