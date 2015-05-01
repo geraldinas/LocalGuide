@@ -3,24 +3,26 @@
     <%= flash[:notice] %>  
   <% end %>
 
-  <video autoplay  poster="http://bit.ly/1HUHkcF" id="bgvid" loop>
+  <video autoplay  poster="http://fc02.deviantart.net/fs70/f/2012/039/0/7/073f198d3bab83cc0c3d2a50fad2106a-d4p3ucb.jpg " id="bgvid" loop>
   <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
 <source src="http://bit.ly/1HUHkcF" type="video/webm">
 <source src="//bit.ly/1HUHkcF" type="video/mp4">
 </video><br><br><br><br>
 
-  <h1>Welcome to GuideMe!</h1><br>
-  <h3>Connect with locals during your trips</h3>
   <p>
     <%= form_tag(search_path, :method => "get", class: "navbar-form") do %>
   <form id="searchbox" action=""> 
-    <%= text_field_tag :search, params[:search], placeholder: "Search Places" %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Cities", class: "form-control"%>
+    <%= submit_tag "Search", :name => nil, class: "form-control"%>
     <% end %>
   </form>
   </p>
 
-  <% if current_user == nil %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "label label-primary"%>
-  <% end %><br>
+      <div class="container">
+        <h1>GuideMe</h1>
+        <p>A free app that conects you with locals when you are traveling. Share the experiences that only a local would know about!</p>
+          <% if current_user == nil %>
+            <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "label label-primary", class:"btn btn-primary btn-lg" %>
+          <% end %><br>
+    </div>
 </center>
