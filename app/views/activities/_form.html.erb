@@ -1,19 +1,21 @@
+<br><br><br><br>
 <center>
+<legend><h1> Add new activity you would like to host </h1></legend>
   <%=form_for @activity, :html => {:multipart => true} do |f| %>
     <%= f.hidden_field :guide_id, :value => current_user.id%>
-    <%= f.label :name%><br />
+    <br><h4><%= f.label :name%></h4>
     <%= f.text_field :name%><br>
-    <%= f.label :description %><br />
+    <br><br><h4><%= f.label :description %></h4>
     <%= f.text_field :description %><br>
-    <%= f.fields_for :locations, Location.new do |  builder| %>
+    <br><br><%= f.fields_for :locations, Location.new do |  builder| %>
       <%= render 'location_fields', f: builder %>
     <%end%>
     <%= link_to_add_fields "Add Location", f, :locations%>
 
     <div class='actions'>
-      <%= f.file_field :avatar %>
+      <%= f.file_field :avatar, :class => "facebook-button"%><br><br>
     </div>
     
-    <%= f.submit "submit" %>
+    <%= f.submit "submit", :class => "stephanie" %>
   <% end %>  
 </center>

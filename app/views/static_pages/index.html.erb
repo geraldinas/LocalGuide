@@ -10,9 +10,13 @@
 </video><br><br><br><br>
 
 
+<<<<<<< HEAD
       <div class="container">
   <p>
   <div class="guide_me" style="color:#FFFFFF">GuideMe</div><br><br>
+=======
+  <h1 style="color:#FFFFFF;text-shadow:1px 1px 8px #000;">GuideMe</h1>
+>>>>>>> 7cb63bd921c859105ed897afe46010999c71b214
 
     <%= form_tag(search_path, :method => "get", class: "navbar-form") do %>
   <form id="searchbox" action=""> 
@@ -24,9 +28,9 @@
 
       <div class="container">
         
-       <br><br> <h4 style="color:#FFFFFF">A free app that conects you with locals when you are traveling. Share the experiences that only a local would know about!</h4>
+       <br><br> <h4 style="font-size:15px;color:#FFFFFF;text-shadow:1px 1px 8px #000;">A free app that conects you with locals when you are traveling. Share the experiences that only a local would know about!</h4>
           <% if current_user == nil %>
-            <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "label label-primary", class:"btn btn-primary btn-lg" %>
+            <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "facebook-button" %>
           <% end %><br>
     </div>
 </center>

@@ -257,6 +257,38 @@ a:hover {
   font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+.facebook-button {
+   border-top: 1px solid #52595e;
+   background: #353c40;
+   background: -webkit-gradient(linear, left top, left bottom, from(#393c3d), to(#353c40));
+   background: -webkit-linear-gradient(top, #393c3d, #353c40);
+   background: -moz-linear-gradient(top, #393c3d, #353c40);
+   background: -ms-linear-gradient(top, #393c3d, #353c40);
+   background: -o-linear-gradient(top, #393c3d, #353c40);
+   padding: 8px 16px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #bfbbbf;
+   font-size: 13px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #242b30;
+   background: #242b30;
+   color: #4f4b4f;
+   }
+.button:active {
+   border-top-color: #595959;
+   background: #595959;
+}
+
 img {
   display: block;
   height: auto;
@@ -272,6 +304,7 @@ p {
   color: #505050;
 }
 
+<<<<<<< HEAD
 .guide_me{
   font-size: 8rem;
   margin-top: 0;
@@ -304,3 +337,19 @@ p {
   font-weight: 600;
   font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+=======
+.img-circle {
+display: block;
+  min-width: 50%;
+  min-height: 25%;
+}
+
+.background-image {
+    background-image: url("http://www.designbolts.com/wp-content/uploads/2012/12/Subtle-Dots-White-Tileable-pattern.jpg");
+    background-color: #E0EEF0;
+}
+
+.background-color {
+  background-color: #e5e5e5;
+}
+>>>>>>> 7cb63bd921c859105ed897afe46010999c71b214
