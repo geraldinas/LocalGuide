@@ -1,20 +1,30 @@
 <center>
 <h1>Showing Guides in: <%=@trip.city.name%></h1>
-	<%@users.each do |user|%>
-		<h2><%= link_to(user.name, trip_guide_path(@trip, user)) %></h2>
-		
+  
+  <%@users.each do |user|%>
+  <ul class="list-group">
+    <h2><%= link_to(user.name, trip_guide_path(@trip, user)) %></h2>
+  <li class="list-group-item">
+
+    
     <%if user.avatar_url.nil?%>
     <b><%= link_to(image_tag(user.image_url),trip_guide_path(@trip, user)) %><br>
-    <%else%>	      
+    <%else%>        
         <%= link_to(image_tag(user.avatar_url(:thumb)),trip_guide_path(@trip, user)) %><br>
     <%end%>   
-		
-    	<%=user.description%><br></b>
-	<h2> Activities Hosting </h2>
 
-			<%user.activities.each do |activity|%>
-			<ul><h4><%=activity.name%><br></h4></ul>
+
+    
+      <%=user.description%><br></b>
+  <h2> Activities Hosting </h2>
+
+
+
+      <%user.activities.each do |activity|%>
+      <h4><%=activity.name%><br></h4>
+</li>
+</ul>
       
-	<%end%>	
+  <%end%> 
 <%end%>
 </center>

@@ -9,14 +9,17 @@
 <source src="//bit.ly/1HUHkcF" type="video/mp4"> -->
 </video><br><br><br><br>
 
-  <p>
 
-  <h1 style="color:#FFFFFF;text-shadow:1px 1px 8px #000;">GuideMe</h1>
+
+      <div class="container">
+  <p>
+  <div class="guide_me" style="color:#FFFFFF">GuideMe</div><br><br>
+
 
     <%= form_tag(search_path, :method => "get", class: "navbar-form") do %>
   <form id="searchbox" action=""> 
     <%= text_field_tag :search, params[:search], placeholder: "Search Cities", class: "form-control"%>
-    <%= submit_tag "Search", :name => nil, class: "form-control", :class => "stephanie"%>
+    <%= submit_tag "Search", :name => nil, class: "form-control", :class => "search_button"%><br>
     <% end %>
   </form>
   </p>

@@ -6,9 +6,11 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
+        <% if current_user%>
     </button>
     <a class="index-font navbar-brand " href="/">GuideMe</a>
   </div>
+      <%end%>
   <div id="navbar" class="collapse navbar-collapse">
     <ul class="nav navbar-nav navbar-right">
         <% if current_user && current_user.city && current_user.email && current_user.avatar %>
