@@ -3,7 +3,8 @@
   
   <%@users.each do |user|%>
   <ul class="list-group">
-    <h2><%= link_to(user.name, trip_guide_path(@trip, user)) %></h2>
+  <div class="guide_name">
+    <h2><%= link_to(user.name, trip_guide_path(@trip, user)) %></h2></div>
   <li class="list-group-item">
 
     
@@ -14,8 +15,8 @@
     <%end%>   
 
 
-    
-      <%=user.description%><br></b>
+    <div class="guide_description"> 
+      <%=user.description%><br></b></div>
   <h2> Activities Hosting </h2>
 
 

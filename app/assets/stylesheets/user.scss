@@ -347,5 +347,25 @@ display: block;
 .background-color {
   background-color: #e5e5e5;
 }
->>>>>>> 7cb63bd921c859105ed897afe46010999c71b214
->>>>>>> d2d5574d5d1e6036ca213fe9224f98261a976487
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #E3C8C8;
+}
+
+.guide_name {
+  color: #B00D0D;
+  font-size: 2srem;
+  font-family:Helvetica Neue, Helvetica, Arial;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+}
+
+.guide_description{
+  font-family:Helvetica Neue, Helvetica, Arial;
+  letter-spacing: .3rem;
+}
