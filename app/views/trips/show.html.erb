@@ -1,7 +1,8 @@
+<br><br><br><br>
 <center>
-  <h1>Destination: <%=@trip.city.name%></h1>
-    Start date of trip: <%=@trip.start_date.to_formatted_s(:long_ordinal)%></p>
-    End date of trip: <%=@trip.end_date.to_formatted_s(:long_ordinal)%><br>
+  <legend><h1>Destination: <%=@trip.city.name%></h1></legend><br><br>
+    <h4>Start date of your trip: <%=@trip.start_date.to_formatted_s(:long_ordinal)%></p></h4><br><br>
+    <h4>End date of your trip: <%=@trip.end_date.to_formatted_s(:long_ordinal)%><br></h4><br><br>
   
   <%unless @trip.accepted_tours.empty?%> 
   <h3>Tours For Trip</h3>
@@ -23,10 +24,10 @@
   <%end%>
   
   <% if @trip.start_date > Date.today %>
-    <p><%= link_to "Find a Tour Guide", trip_guides_path(@trip)%></p>
-    <p><%= link_to "Edit Trip", edit_trip_path(@trip) %></p>
-    <%= link_to 'Delete Trip', trip_path(@trip), :method => :delete, :class => "btn btn-info btn-sm"  %>
+    <p><%= link_to "Find a Tour Guide", trip_guides_path(@trip), :class => "stephanie"%></p><br>
+    <%= link_to "Edit Trip", edit_trip_path(@trip), :class => "stephanie" %>
+    <%= link_to 'Delete Trip', trip_path(@trip), :method => :delete, :class => "stephanie"  %></center>
     <% else %>
-    <%= link_to 'Delete Trip', trip_path(@trip), :method => :delete, :class => "btn btn-info btn-sm"  %>
+    <%= link_to 'Delete Trip', trip_path(@trip), :method => :delete, :class => "stephanie"  %>
   <%end%>
 </center>

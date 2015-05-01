@@ -10,17 +10,19 @@
   </div>
 <% end %></center>
 
-<center>HI this is your availabilities form please enter your available times:
+<br><br><br><br>
 
-Add Availability: 
-<%=form_for @availability do |f|%><br>
+<legend><center><h1>Add Times You're Available</h1></center></legend>
+
+<center><h3> Add an Availability: </h3></center>
+<center><%=form_for @availability do |f|%><br>
   <%= f.hidden_field :guide_id, value: current_user.id%>
-  <%= f.label :day_id, "Select Day" %> 
+  <p><h4><%= f.label :day_id, "Select Day" %> </h4></p>
   <%= f.collection_select :day_id, Day.all, :id, :name%>
-  <%= f.label :start_time %>
+  <br><br><p><h4><%= f.label :start_time %></h4></p>
   <%= f.time_field :start_time %>
-  <%= f.label :end_time %>
-  <%= f.time_field :end_time %>
-  <%= f.submit "Edit"%>
-<%end%>
+  <br><br><p><h4><%= f.label :end_time %></h4></p>
+  <%= f.time_field :end_time %><br><br>
+  <p><%= f.submit "Edit", :class => "stephanie"%></p>
+<%end%></center>
 </center>
