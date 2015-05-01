@@ -1,12 +1,11 @@
+<br><br><br>
 <center>
-<h1>Showing Guides in: <%=@trip.city.name%></h1>
+<legend><h1>Showing Guides in: <%=@trip.city.name%></h1></legend>
   
-  <%@users.each do |user|%>
-  <ul class="list-group">
-    <h2><%= link_to(user.name, trip_guide_path(@trip, user)) %></h2>
-  <li class="list-group-item">
+  <%@users.each do |user|%><br>
+    <h4><%= link_to(user.name, trip_guide_path(@trip, user)) %></h4>
+  
 
-    
     <%if user.avatar_url.nil?%>
     <b><%= link_to(image_tag(user.image_url),trip_guide_path(@trip, user)) %><br>
     <%else%>        
@@ -14,17 +13,12 @@
     <%end%>   
 
 
-    
-      <%=user.description%><br></b>
-  <h2> Activities Hosting </h2>
+    <h4><%=user.description%></h4><br>
+    <h5> Activities Hosting: </h5>
 
+    <%user.activities.each do |activity|%>
+    <h4><li><%=activity.name%><br></li></h4>
 
-
-      <%user.activities.each do |activity|%>
-      <h4><%=activity.name%><br></h4>
-</li>
-</ul>
-      
   <%end%> 
 <%end%>
 </center>
