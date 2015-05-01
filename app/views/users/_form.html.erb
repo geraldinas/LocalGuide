@@ -1,14 +1,14 @@
-
+<br><br><br><br>
 <center>
 <%=form_for @user do |f| %><br>
-  <%= f.label :city_id, "Select your city" %>
-  <%= f.collection_select :city_id, City.all, :id, :name %><br><br>
-  <%= f.label :email, "Enter Email" %>
-  <%= f.text_field :email %><br>  
+  <h4><%= f.label :city_id, "Select your city" %></h4>
+  <%= f.collection_select :city_id, City.all, :id, :name %><br><br><br>
+  <h4><%= f.label :email, "Enter Email" %></h4>
+  <%= f.text_field :email %><br><br><br>
   <%#= f.submit "Upload Image" %>
-  <%= f.label :description, "Enter a Short Bio" %><br>
-  <%= f.text_area :description %>
-  <%= f.submit "Update Profile" %>
+  <h4><%= f.label :description, "Enter a Short Bio" %></h4><br>
+  <center><%= f.text_area :description %></center><br>
+  <%= f.submit "Update Profile", :class => "stephanie" %>
 <% end %>
 
 </center>
