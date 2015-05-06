@@ -21,16 +21,16 @@
       <h4><b>Pending Tours:</b></h4><br>
 
         <% current_user.pending_led_tours.each do |tour| %><br>
-          <ul><%= link_to(tour.activity.name, activity_path(tour.activity)) %>
-          <ul><%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %>
-          <ul><ul><%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
-          <ul><%=tour.end_time.to_formatted_s(:long_ordinal)%></ul></ul>
+          Activity:<%= link_to(tour.activity.name, activity_path(tour.activity)) %><br>
+          From:<%= link_to(tour.trip.tourist.name, user_path(tour.trip.tourist)) %><br>
+          On: <%=tour.start_time.to_formatted_s(:long_ordinal)%></ul>
+          <%=tour.end_time.to_formatted_s(:long_ordinal)%></ul>
 
 
       <%= form_for tour do |f| %>
         <%= f.hidden_field :status, :value => "accepted" %>
         <%= f.submit "Accept" %>
-      <% end %>
+      <% end %><br>
 
       <%= form_for tour do |f| %>
         <%= f.hidden_field :status, :value => "rejected" %>

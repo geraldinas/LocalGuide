@@ -3,9 +3,9 @@
 <legend><h1>Showing Guides in: <%=@trip.city.name%></h1></legend>
   
 
-  <%@users.each do |user|%>
   <ul class="list-group">
   <div class="guide_name">
+  <%@users.each do |user|%>
     <h2><%= link_to(user.name, trip_guide_path(@trip, user)) %></h2></div>
   <li class="list-group-item">
 
